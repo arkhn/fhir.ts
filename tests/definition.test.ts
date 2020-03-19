@@ -48,6 +48,12 @@ describe('isChildOf', () => {
 })
 
 describe('structurize', () => {
+  it('raises when the snapshot is missing', () => {
+    expect(() => structurize({})).toThrowErrorMatchingInlineSnapshot(
+      `"Snapshot is needed in the structure definition."`,
+    )
+  })
+
   it('builds a structured version of a mock StructureDefinition (snapshot)', () => {
     const structured = structurize(mockDefinition.resource)
     expect(structured).toMatchSnapshot()

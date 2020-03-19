@@ -29,8 +29,8 @@ export const isChildOf = (
   child: AttributeDefinition,
   parent: AttributeDefinition,
 ): boolean => {
-  const parentPath = parent.path.split('.').slice(1)
-  const attrPath = child.path.split('.').slice(1)
+  const parentPath = parent.path.split('.')
+  const attrPath = child.path.split('.')
   return JSON.stringify(attrPath.slice(0, -1)) === JSON.stringify(parentPath)
 }
 
@@ -62,51 +62,51 @@ export const structurize = (fhirDefinition: {
     return res
   }
 
-  const buildProperties = (): Attribute[] => {
+  const buildAttributes = (): Attribute[] => {
     // Iterate on the rest of the snapshot elements and add the properties on the definition object
     // Note that we filter out the properties which are inherited from different resources (Resource, DomainResource...)
-    const recBuildProperties = (
+    const recBuildAttributes = (
       attributes: AttributeDefinition[],
       res: Attribute[],
-      current?: Attribute,
+      previous?: Attribute,
     ): Attribute[] => {
-      const [next, ...rest] = attributes
+      const [current, ...rest] = attributes
 
       // if the list of snapshot elements is over, return the attribute list
-      if (!next) {
+      if (!current) {
         return res
       }
 
-      if (current) {
-        if (isSliceOf(next, current.definition)) {
-          const slice = new Attribute(next)
-          current.addSlice(slice)
-          // keep iterating on the snapshot elements using the slice attribute as current
-          return recBuildProperties(rest, res, slice)
+      if (previous) {
+        if (isSliceOf(current, previous.definition)) {
+          const slice = new Attribute(current)
+          previous.addSlice(slice)
+          // keep iterating on the snapshot elements using the slice attribute as previous
+          return recBuildAttributes(rest, res, slice)
         }
 
-        // try to add the next attribute as child of the current one
-        if (isChildOf(next, current.definition)) {
-          const child = new Attribute(next)
-          current.addChild(child)
-          // keep iterating on the snapshot elements using the new child attribute as current
-          return recBuildProperties(rest, res, child)
+        // try to add the current attribute as child of the previous one
+        if (isChildOf(current, previous.definition)) {
+          const child = new Attribute(current)
+          previous.addChild(child)
+          // keep iterating on the snapshot elements using the new child attribute as previous
+          return recBuildAttributes(rest, res, child)
         }
 
-        // if next is not a children of current, try with the parent of current
-        return recBuildProperties([next, ...rest], res, current.parent)
+        // if current is not a children of previous, try with the parent of previous
+        return recBuildAttributes([current, ...rest], res, previous.parent)
       }
 
-      // if there is no current attribute, append the attribute to the attributes list
-      const attr = new Attribute(next)
+      // if there is no previous attribute, append the attribute to the attributes list
+      const attr = new Attribute(current)
       res.push(attr)
 
-      return recBuildProperties(rest, res, attr)
+      return recBuildAttributes(rest, res, attr)
     }
 
     // Build the attributes ignoring the first element of the snapshot (which is not an actual attribute)
     const cleanedSnapshot = fhirDefinition.snapshot.element.slice(1)
-    return recBuildProperties(cleanedSnapshot, [])
+    return recBuildAttributes(cleanedSnapshot, [])
   }
 
   // If the structure defines a primitive type (one which we don't need to unroll in UI)
@@ -118,6 +118,6 @@ export const structurize = (fhirDefinition: {
 
   return {
     meta: buildMetadata(),
-    attributes: buildProperties(),
+    attributes: buildAttributes(),
   }
 }

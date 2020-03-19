@@ -7,8 +7,10 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "publish": "yarn publish --access public",
-    "test": "jest --max-workers 1 --watch"
+    "lint": "eslint ./src/**/*.ts",
+    "release": "semantic-release",
+    "test": "jest --max-workers 1 --watch",
+    "test:ci": "jest --max-workers 1 --coverage"
   },
   "dependencies": {},
   "devDependencies": {
@@ -19,16 +21,33 @@
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.3",
     "jest": "^25.1.0",
     "npm": "^6.14.2",
     "prettier": "^1.19.1",
     "semantic-release": "^17.0.4",
     "ts-jest": "^25.2.1",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "validate-commit": "^3.4.0"
   },
   "prettier": {
     "singleQuote": true,
     "semi": false,
     "trailingComma": "all"
+  },
+  "release": {
+    "branch": "master",
+    "preset": "eslint",
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/github"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "validate-commit-msg -p eslint"
+    }
   }
 }
