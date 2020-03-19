@@ -1,0 +1,88 @@
+{
+  "fullUrl": "http://hl7.org/fhir/StructureDefinition/mock",
+  "resource": {
+    "resourceType": "StructureDefinition",
+    "id": "mock",
+    "url": "http://hl7.org/fhir/StructureDefinition/mock",
+    "version": "4.0.1",
+    "name": "Mock",
+    "title": "Mock Profile",
+    "date": "2018-08-11",
+    "publisher": "Arkhn dev team",
+    "description": "Mock profile with a slice",
+    "fhirVersion": "4.0.1",
+    "kind": "resource",
+    "type": "Mock",
+    "baseDefinition": "http://hl7.org/fhir/StructureDefinition/super-mock",
+    "derivation": "constraint",
+    "snapshot": {
+      "element": [
+        {
+          "id": "Mock",
+          "path": "Mock",
+          "min": 0,
+          "max": "1",
+          "constraint": [
+            {
+              "key": "dom-2",
+              "severity": "error",
+              "human": "If the resource is contained in another resource, it SHALL NOT contain nested Resources",
+              "expression": "contained.contained.empty()",
+              "xpath": "not(parent::f:contained and f:contained)",
+              "source": "http://hl7.org/fhir/StructureDefinition/DomainResource"
+            }
+          ]
+        },
+        {
+          "id": "Mock.a",
+          "path": "Mock.a",
+          "min": 0,
+          "max": "*",
+          "base": {
+            "path": "Resource.id",
+            "min": 0,
+            "max": "1"
+          },
+          "type": [
+            {
+              "code": "string"
+            }
+          ]
+        },
+        {
+          "id": "Mock.a:SomeSlice",
+          "path": "Mock.a",
+          "sliceName": "SomeSlice",
+          "min": 1,
+          "max": "1",
+          "base": {
+            "path": "Resource.id",
+            "min": 0,
+            "max": "1"
+          },
+          "type": [
+            {
+              "code": "string"
+            }
+          ]
+        },
+        {
+          "id": "Mock.a:SomeSlice.b",
+          "path": "Mock.a.b",
+          "min": 0,
+          "max": "1",
+          "base": {
+            "path": "Resource.id",
+            "min": 0,
+            "max": "1"
+          },
+          "type": [
+            {
+              "code": "string"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

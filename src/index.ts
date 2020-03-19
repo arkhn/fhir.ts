@@ -1,1 +1,2 @@
-console.log('coucou')
+export { Attribute } from './attribute'
+export { structurize } from './definition'
