@@ -21,18 +21,13 @@ const metaProperties: (keyof ResourceDefinition)[] = [
 export const isSliceOf = (
   slice: AttributeDefinition,
   attr: AttributeDefinition,
-): boolean => {
-  return slice.path === attr.path && !!slice.sliceName
-}
+): boolean => slice.path === attr.path && !!slice.sliceName
 
 export const isChildOf = (
   child: AttributeDefinition,
   parent: AttributeDefinition,
-): boolean => {
-  const parentPath = parent.path.split('.')
-  const attrPath = child.path.split('.')
-  return JSON.stringify(attrPath.slice(0, -1)) === JSON.stringify(parentPath)
-}
+): boolean =>
+  child.path.substring(0, child.path.lastIndexOf('.')) === parent.path
 
 export const structurize = (fhirDefinition: {
   [k: string]: any
