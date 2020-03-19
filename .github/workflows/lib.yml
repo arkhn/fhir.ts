@@ -22,7 +22,7 @@ jobs:
       - name: Cache node modules
         uses: actions/cache@v1
         with:
-          path: server/node_modules
+          path: node_modules
           key: ${{ runner.OS }}-${{ matrix.node-version}}-node-modules-${{ hashFiles('yarn.lock') }}
 
       - name: Install Dependencies
@@ -44,6 +44,12 @@ jobs:
     if: github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v1
+
+      - name: Cache node modules
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-${{ matrix.node-version}}-node-modules-${{ hashFiles('yarn.lock') }}
 
       - name: Build
         run: yarn build
