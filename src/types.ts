@@ -32,7 +32,10 @@ export type ResourceDefinition = {
 export type AttributeDefinition = {
   id: string
   path: string
-  definition: any
+  definition: string
+  base: {
+    path: string
+  }
   min: number
   max: string
   type: any[]
