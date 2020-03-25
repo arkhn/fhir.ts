@@ -39,7 +39,7 @@ export type AttributeDefinition = {
   min: number
   max: string
   type: any[]
-  slicing: any
-  sliceName: string
-  constraint: Constraint[]
+  slicing?: any
+  sliceName?: string
+  constraint?: Constraint[]
 }

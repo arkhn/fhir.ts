@@ -1,8 +1,8 @@
-import { structurize, isChildOf } from 'definition'
-
 import * as heartrateProfile from './fixtures/heartrate-profile.json'
 import * as mockDefinition from './fixtures/mockDefinition.json'
 import * as definitionWithSlices from './fixtures/definitionWithSlices.json'
+
+import { structurize, isChildOf } from 'definition'
 import { AttributeDefinition } from 'types'
 
 describe('isChildOf', () => {

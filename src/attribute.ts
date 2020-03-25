@@ -81,7 +81,7 @@ export class Attribute {
     let tail = this.name || ''
 
     if (this.isSlice) {
-      tail = this.name.includes('[x]') ? this.definition.sliceName : this.name
+      tail = this.name.includes('[x]') ? this.definition.sliceName! : this.name
     }
 
     // if element has an index, return the index in brackets
@@ -174,7 +174,7 @@ export class Attribute {
 
     item.parent = this.parent
     item.isItem = true
-    item.index = index !== undefined ? index : computeIndex()
+    item.index = computeIndex()
     item.slices.forEach(slice => {
       slice.isItem = true
       slice.index = item.index
@@ -184,6 +184,7 @@ export class Attribute {
 
   // removeItem simply removes an attribute from the list of items.
   removeItem(item: Attribute) {
+    item.parent = undefined
     this.items = this.items.filter(i => i.index! !== item.index!)
   }
 
