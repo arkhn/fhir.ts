@@ -25,6 +25,7 @@ const PRIMITIVE_TYPES = [
   'xhtml',
 ]
 
+// Attribute is the class used to represent hierarchically a FHIR resource based oni ts StructureDefinition.
 export class Attribute {
   parent?: Attribute
   children: Attribute[]
@@ -44,6 +45,8 @@ export class Attribute {
 
   index?: number
 
+  // the Attribute class must be initialized with an AttributeDefinition, which
+  // is a single item of the snapshot.element array of a StructureDefinition.
   constructor(definition: AttributeDefinition) {
     this.children = []
     this.slices = []
@@ -73,17 +76,19 @@ export class Attribute {
     return this.types[0] === 'uri' && this.parent?.types[0] === 'Reference'
   }
 
+  // tail returns the last element of the attribute path
   get tail(): string {
-    // if element has an index, return the index in brackets
     let tail = this.name || ''
 
     if (this.isSlice) {
       tail = this.name.includes('[x]') ? this.definition.sliceName : this.name
     }
 
+    // if element has an index, return the index in brackets
     return this.isItem ? `${tail}[${this.index}]` : tail
   }
 
+  // path returns the complete path of the attribute and its parents (if any)
   get path(): string {
     // if not parent, returns the tail
     if (!this.parent) {
@@ -94,6 +99,10 @@ export class Attribute {
     return `${this.parent.path}.${this.tail}`
   }
 
+  // from rebuilds an Attribute from an other one or from a serialized version of it.
+  // It recursively browse all the slices, children and items in order to deep copy the provided attribute.
+  // This function is especially useful when we want to rebuild an
+  // Attribute tree from a cached version of a StructureDefinition.
   static from(serialized: any): Attribute {
     const attr = new Attribute(serialized.definition)
     attr.isItem = serialized.isItem
@@ -110,6 +119,9 @@ export class Attribute {
     return attr
   }
 
+  // spreadTypes generates an array of single-type Attribute for each type of this attribute.
+  // We use this in cases where we have an attrirbute like "value[x]" which has multiple types
+  // and we want to generate as many children as there are types (eg: "valueQuantity", "valueBoolean"...)
   spreadTypes(): Attribute[] {
     if (this.types.length > 1) {
       return this.types.map(type => {
@@ -126,20 +138,14 @@ export class Attribute {
     return [this]
   }
 
-  isChild(p: Attribute): boolean {
-    let current = this as Attribute | undefined
-    while (current) {
-      if (current.equals(p)) return true
-      current = current.parent
-    }
-    return false
-  }
-
+  // addChild adds a child attribute to this and sets the child's parent to this.
   addChild(child: Attribute) {
     child.parent = this
     this.children.push(child)
   }
 
+  // addSlice adds a slice attribute to this and update the parent of the slice with the current parent.
+  // Note that if this attribute is an item of an array, the slice must be an item as well (and we pass along the current index)
   addSlice(slice: Attribute) {
     slice.parent = this.parent
     if (this.isItem) {
@@ -149,6 +155,10 @@ export class Attribute {
     this.slices.push(slice)
   }
 
+  // addItem adds an item to this and update the parent of the item with the current parent.
+  // The index may be provided (in case the attribute already exists in the db and has a pre-defined index)
+  // Otherwise the index is computed with the first available index.
+  // If the added item has slices, we must pass along the item's index.
   addItem(item: Attribute, index?: number) {
     const computeIndex = () => {
       if (index !== undefined) {
@@ -174,15 +184,14 @@ export class Attribute {
     this.items.push(item)
   }
 
+  // removeItem simply removes an attribute from the list of items.
   removeItem(item: Attribute) {
     this.items = this.items.filter(i => i.index! !== item.index!)
   }
 
+  // toJSON is used by JSON.parse and JSON.stringify when (de)serializing an object to/from JSON.
+  // We omit the parent because we want to serialize an attribute tree as a DAG (directed acyclic graph).
   toJSON() {
     return { ...this, parent: undefined }
-  }
-
-  equals(p: Attribute) {
-    return this.path === p.path
   }
 }
