@@ -34,12 +34,44 @@
           ]
         },
         {
+          "id": "Mock.id",
+          "path": "Mock.id",
+          "min": 0,
+          "max": "1",
+          "base": {
+            "path": "Resource.id",
+            "min": 0,
+            "max": "1"
+          },
+          "type": [
+            {
+              "code": "string"
+            }
+          ]
+        },
+        {
+          "id": "Mock.extension",
+          "path": "Mock.extension",
+          "min": 0,
+          "max": "1",
+          "base": {
+            "path": "Resource.extension",
+            "min": 0,
+            "max": "1"
+          },
+          "type": [
+            {
+              "code": "string"
+            }
+          ]
+        },
+        {
           "id": "Mock.a",
           "path": "Mock.a",
           "min": 0,
           "max": "1",
           "base": {
-            "path": "Resource.id",
+            "path": "Mock.a",
             "min": 0,
             "max": "1"
           },
@@ -55,7 +87,7 @@
           "min": 0,
           "max": "1",
           "base": {
-            "path": "Resource.id",
+            "path": "Mock.a.b",
             "min": 0,
             "max": "1"
           },
@@ -71,7 +103,7 @@
           "min": 0,
           "max": "1",
           "base": {
-            "path": "Resource.id",
+            "path": "Mock.a.b.c",
             "min": 0,
             "max": "1"
           },
@@ -87,7 +119,7 @@
           "min": 0,
           "max": "1",
           "base": {
-            "path": "Resource.id",
+            "path": "Mock.a.d",
             "min": 0,
             "max": "1"
           },
@@ -103,7 +135,7 @@
           "min": 0,
           "max": "1",
           "base": {
-            "path": "Resource.id",
+            "path": "Mock.e",
             "min": 0,
             "max": "1"
           },
@@ -119,7 +151,7 @@
           "min": 0,
           "max": "1",
           "base": {
-            "path": "Resource.id",
+            "path": "Mock.e.f",
             "min": 0,
             "max": "1"
           },

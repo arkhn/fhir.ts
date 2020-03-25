@@ -115,7 +115,7 @@ describe('structurize', () => {
     expect(structured.meta).toMatchObject({ kind: 'primitive-type' })
   })
 
-  it('handles slices (snapshot', () => {
+  it('handles slices (snapshot)', () => {
     const structured = structurize(definitionWithSlices.resource)
 
     expect(structured).toMatchSnapshot()
