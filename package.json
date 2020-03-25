@@ -6,7 +6,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --project tsconfig.build.json",
     "lint": "eslint ./src/**/*.ts",
     "release": "semantic-release",
     "test": "jest --max-workers 1 --watch",

@@ -1,5 +1,5 @@
 import { Attribute } from './attribute'
-import { ResourceDefinition, Definition, AttributeDefinition } from 'types'
+import { ResourceDefinition, Definition, AttributeDefinition } from './types'
 
 const rootProperties: (keyof ResourceDefinition)[] = [
   'min',
@@ -18,6 +18,13 @@ const metaProperties: (keyof ResourceDefinition)[] = [
   'publisher',
 ]
 
+const omittedResources = [
+  'Element',
+  'BackboneElement',
+  'Resource',
+  'DomainResource',
+]
+
 export const isSliceOf = (
   slice: AttributeDefinition,
   attr: AttributeDefinition,
@@ -28,6 +35,11 @@ export const isChildOf = (
   parent: AttributeDefinition,
 ): boolean =>
   child.path.substring(0, child.path.lastIndexOf('.')) === parent.path
+
+const shouldOmit = (attribute: AttributeDefinition): boolean => {
+  const baseResource: string = attribute.base.path.split('.')[0]
+  return omittedResources.includes(baseResource)
+}
 
 export const structurize = (fhirDefinition: {
   [k: string]: any
@@ -42,15 +54,19 @@ export const structurize = (fhirDefinition: {
     // Build the metadata structure on the definition object
     for (const property of metaProperties) {
       if (!fhirDefinition[property]) {
-        console.warn(`Missing property ${property} in StructureDefinition`)
+        console.warn(
+          `[${fhirDefinition.id}] Missing property ${property} in StructureDefinition`,
+        )
       }
       res[property] = fhirDefinition[property]
     }
 
     // Extract the cardinality and constraints from the first element of the snapshot
     for (const property of rootProperties) {
-      if (!fhirDefinition.snapshot.element[0][property]) {
-        console.warn(`Missing property ${property} in first snapshot attribute`)
+      if (fhirDefinition.snapshot.element[0][property] === undefined) {
+        console.warn(
+          `[${fhirDefinition.id}] Missing property ${property} in first snapshot attribute`,
+        )
       }
       res[property] = fhirDefinition.snapshot.element[0][property]
     }
@@ -70,6 +86,12 @@ export const structurize = (fhirDefinition: {
       // if the list of snapshot elements is over, return the attribute list
       if (!current) {
         return res
+      }
+
+      // if the attribute is inherited from a generic resource (Element, Resource, DomainResource)
+      // we want to ignore it
+      if (shouldOmit(current)) {
+        return recBuildAttributes(rest, res, previous)
       }
 
       if (previous) {

@@ -39,7 +39,7 @@
           "min": 0,
           "max": "*",
           "base": {
-            "path": "Resource.id",
+            "path": "Mock.a",
             "min": 0,
             "max": "1"
           },
@@ -56,7 +56,7 @@
           "min": 1,
           "max": "1",
           "base": {
-            "path": "Resource.id",
+            "path": "Mock.a",
             "min": 0,
             "max": "1"
           },
@@ -72,7 +72,7 @@
           "min": 0,
           "max": "1",
           "base": {
-            "path": "Resource.id",
+            "path": "Mock.a.b",
             "min": 0,
             "max": "1"
           },
