@@ -25,7 +25,7 @@ const PRIMITIVE_TYPES = [
   'xhtml',
 ]
 
-// Attribute is the class used to represent hierarchically a FHIR resource based oni ts StructureDefinition.
+// Attribute is the class used to represent hierarchically a FHIR resource based on its StructureDefinition.
 export class Attribute {
   parent?: Attribute
   children: Attribute[]
@@ -105,8 +105,6 @@ export class Attribute {
   // Attribute tree from a cached version of a StructureDefinition.
   static from(serialized: any): Attribute {
     const attr = new Attribute(serialized.definition)
-    attr.isItem = serialized.isItem
-    attr.index = serialized.index
     for (const child of serialized.children) {
       attr.addChild(Attribute.from(child))
     }
