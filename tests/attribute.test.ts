@@ -1,6 +1,21 @@
 import { Attribute } from 'attribute'
 import { AttributeDefinition } from 'types'
-import { notDeepEqual } from 'assert'
+
+const observationIdentifierDefinition: AttributeDefinition = {
+  id: 'Observation.identifier',
+  path: 'Observation.identifier',
+  definition: 'identifier',
+  min: 0,
+  max: '*',
+  base: {
+    path: 'Observation.identifier',
+  },
+  type: [
+    {
+      code: 'string',
+    },
+  ],
+}
 
 const observationCodeDefinition: AttributeDefinition = {
   id: 'Observation.code',
@@ -14,16 +29,6 @@ const observationCodeDefinition: AttributeDefinition = {
   type: [
     {
       code: 'CodeableConcept',
-    },
-  ],
-  constraint: [
-    {
-      key: 'ele-1',
-      severity: 'error',
-      human: 'All FHIR elements must have a @value or children',
-      expression: 'hasValue() or (children().count() > id.count())',
-      xpath: '@value|f:*|h:div',
-      source: 'http://hl7.org/fhir/StructureDefinition/Element',
     },
   ],
 }
@@ -101,16 +106,6 @@ describe('Attribute', () => {
           "base": Object {
             "path": "Observation.code",
           },
-          "constraint": Array [
-            Object {
-              "expression": "hasValue() or (children().count() > id.count())",
-              "human": "All FHIR elements must have a @value or children",
-              "key": "ele-1",
-              "severity": "error",
-              "source": "http://hl7.org/fhir/StructureDefinition/Element",
-              "xpath": "@value|f:*|h:div",
-            },
-          ],
           "definition": "Heart Rate.",
           "id": "Observation.code",
           "max": "1",
@@ -123,10 +118,8 @@ describe('Attribute', () => {
           ],
         },
         "id": "code",
-        "isArray": false,
         "isItem": false,
         "isPrimitive": false,
-        "isRequired": true,
         "isSlice": false,
         "items": Array [],
         "name": "code",
@@ -158,10 +151,7 @@ describe('Attribute', () => {
 
       const child1 = new Attribute(observationIdDefinition)
       const child2 = new Attribute(observationIdDefinition)
-      const child3 = new Attribute(observationIdDefinition)
-
-      const item1 = new Attribute(observationIdDefinition)
-      const item2 = new Attribute(observationIdDefinition)
+      const child3 = new Attribute(observationIdentifierDefinition)
 
       const slice = new Attribute(observationCategorySliceDefinition)
       const sliceChild1 = new Attribute(observationIdDefinition)
@@ -177,8 +167,8 @@ describe('Attribute', () => {
       slice.addChild(sliceChild2)
 
       child3.addSlice(slice)
-      child3.addItem(item1)
-      child3.addItem(item2)
+      child3.addItem()
+      child3.addItem()
 
       const copied = Attribute.from(parent)
       expect(JSON.stringify(copied) === JSON.stringify(parent))
@@ -192,10 +182,10 @@ describe('Attribute', () => {
     })
 
     it('adds an index when attribute is an array item', () => {
-      const parent = new Attribute(observationCodeDefinition)
-      const attr = new Attribute(observationIdDefinition)
-      parent.addItem(attr)
-      expect(attr.tail).toEqual('id[0]')
+      const array = new Attribute(observationIdentifierDefinition)
+      const item = array.addItem()
+
+      expect(item.tail).toEqual('identifier[0]')
     })
 
     it('handles multi-type slices', () => {
@@ -204,10 +194,10 @@ describe('Attribute', () => {
     })
 
     it('handles slice array item', () => {
-      const parent = new Attribute(observationCodeDefinition)
-      const item = new Attribute(observationCodeDefinition)
+      const array = new Attribute(observationIdentifierDefinition)
       const slice = new Attribute(observationCategorySliceDefinition)
-      parent.addItem(item)
+
+      const item = array.addItem()
       item.addSlice(slice)
       expect(slice.tail).toEqual('category[0]')
     })
@@ -291,10 +281,9 @@ describe('Attribute', () => {
     })
 
     it('handles slice items', () => {
-      const array = new Attribute(observationCodeDefinition)
-      const item = new Attribute(observationIdDefinition)
+      const array = new Attribute(observationIdentifierDefinition)
       const slice = new Attribute(observationValueSliceDefinition)
-      array.addItem(item)
+      const item = array.addItem()
       item.addSlice(slice)
 
       expect(slice.parent).not.toBeDefined()
@@ -305,10 +294,16 @@ describe('Attribute', () => {
   })
 
   describe('addItem', () => {
+    it('throws if the attribute is not an array', () => {
+      const notArray = new Attribute(observationCodeDefinition)
+      expect(() => notArray.addItem()).toThrowError(
+        'trying to add an item to a non-array attribute',
+      )
+    })
+
     it('adds an item with and index and update the parent', () => {
-      const array = new Attribute(observationCodeDefinition)
-      const item = new Attribute(observationIdDefinition)
-      array.addItem(item)
+      const array = new Attribute(observationIdentifierDefinition)
+      const item = array.addItem()
 
       expect(array.items).toEqual([item])
       expect(item.isItem).toBe(true)
@@ -316,14 +311,13 @@ describe('Attribute', () => {
     })
 
     it('forwards the index to the slices if any', () => {
-      const array = new Attribute(observationCodeDefinition)
-      const item = new Attribute(observationIdDefinition)
+      const array = new Attribute(observationIdentifierDefinition)
       const slice1 = new Attribute(observationValueSliceDefinition)
       const slice2 = new Attribute(observationValueSliceDefinition)
+      const item = array.addItem()
+
       item.addSlice(slice1)
       item.addSlice(slice2)
-
-      array.addItem(item)
 
       expect(slice1.isItem).toBe(true)
       expect(slice1.index).toEqual(item.index)
@@ -332,31 +326,26 @@ describe('Attribute', () => {
     })
 
     it('accepts an optional index', () => {
-      const array = new Attribute(observationCodeDefinition)
-      const item = new Attribute(observationIdDefinition)
+      const array = new Attribute(observationIdentifierDefinition)
+      const item = array.addItem(42)
 
-      array.addItem(item, 42)
       expect(item.isItem).toBe(true)
       expect(item.index).toEqual(42)
     })
 
     it('computes the index', () => {
-      const array = new Attribute(observationCodeDefinition)
-      const item1 = new Attribute(observationIdDefinition)
-      const item2 = new Attribute(observationIdDefinition)
-      const item3 = new Attribute(observationIdDefinition)
-      const item4 = new Attribute(observationIdDefinition)
+      const array = new Attribute(observationIdentifierDefinition)
+      const item1 = array.addItem(42)
+      const item2 = array.addItem(1)
+      const item3 = array.addItem()
+      const item4 = array.addItem()
 
-      array.addItem(item1, 42)
-      array.addItem(item2, 1)
-      array.addItem(item3)
-      array.addItem(item4)
       expect(item1.index).toEqual(42)
       expect(item2.index).toEqual(1)
       expect(item3.index).toEqual(0)
       expect(item4.index).toEqual(2)
 
-      expect(() => array.addItem(item1, 1)).toThrowError(
+      expect(() => array.addItem(1)).toThrowError(
         'item with index 1 already exists',
       )
     })
@@ -364,14 +353,10 @@ describe('Attribute', () => {
 
   describe('removeItem', () => {
     it('removes an item from the array', () => {
-      const array = new Attribute(observationCodeDefinition)
-      const item1 = new Attribute(observationIdDefinition)
-      const item2 = new Attribute(observationIdDefinition)
-      const item3 = new Attribute(observationIdDefinition)
-
-      array.addItem(item1)
-      array.addItem(item2)
-      array.addItem(item3)
+      const array = new Attribute(observationIdentifierDefinition)
+      const item1 = array.addItem()
+      const item2 = array.addItem()
+      const item3 = array.addItem()
 
       array.removeItem(item2)
 

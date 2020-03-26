@@ -37,10 +37,8 @@ export class Attribute {
   definition: AttributeDefinition
   types: string[]
 
-  isArray: boolean
   isSlice: boolean
   isItem: boolean
-  isRequired: boolean
   isPrimitive: boolean
 
   index?: number
@@ -52,13 +50,11 @@ export class Attribute {
     this.slices = []
     this.items = []
 
-    this.definition = definition
+    this.definition = JSON.parse(JSON.stringify(definition))
     this.id = definition.id.split('.').pop()!
     this.name = definition.path.split('.').pop()!
-    this.isArray = definition.max === '*' || Number(definition.max) > 1
     this.isSlice = !!definition.sliceName
     this.isItem = false
-    this.isRequired = definition.min > 0
 
     this.types = definition.type
       ? definition.type.map((type: any) => type.code)
@@ -72,6 +68,12 @@ export class Attribute {
         : false
   }
 
+  get isRequired(): boolean {
+    return this.definition.min > 0
+  }
+  get isArray(): boolean {
+    return this.definition.max === '*' || Number(this.definition.max) > 1
+  }
   get isReferenceType(): boolean {
     return this.types[0] === 'uri' && this.parent?.types[0] === 'Reference'
   }
@@ -105,15 +107,13 @@ export class Attribute {
   // Attribute tree from a cached version of a StructureDefinition.
   static from(serialized: any): Attribute {
     const attr = new Attribute(serialized.definition)
-    for (const child of serialized.children) {
-      attr.addChild(Attribute.from(child))
-    }
-    for (const slice of serialized.slices) {
-      attr.addSlice(Attribute.from(slice))
-    }
-    for (const item of serialized.items) {
-      attr.addItem(Attribute.from(item))
-    }
+    serialized.children.forEach((child: Attribute) =>
+      attr.addChild(Attribute.from(child)),
+    )
+    serialized.slices.forEach((slice: Attribute) =>
+      attr.addSlice(Attribute.from(slice)),
+    )
+    serialized.items.forEach(() => attr.addItem())
     return attr
   }
 
@@ -157,7 +157,7 @@ export class Attribute {
   // The index may be provided (in case the attribute already exists in the db and has a pre-defined index)
   // Otherwise the index is computed with the first available index.
   // If the added item has slices, we must pass along the item's index.
-  addItem(item: Attribute, index?: number) {
+  addItem(index?: number): Attribute {
     const computeIndex = () => {
       if (index !== undefined) {
         if (this.items.map(it => it.index).includes(index)) {
@@ -172,6 +172,12 @@ export class Attribute {
       return this.items.length
     }
 
+    if (!this.isArray) {
+      throw new Error(`trying to add an item to a non-array attribute`)
+    }
+    const item = Attribute.from(this)
+
+    item.definition.max = '1'
     item.parent = this.parent
     item.isItem = true
     item.index = computeIndex()
@@ -180,6 +186,8 @@ export class Attribute {
       slice.index = item.index
     })
     this.items.push(item)
+
+    return item
   }
 
   // removeItem simply removes an attribute from the list of items.
