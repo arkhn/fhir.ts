@@ -78,7 +78,7 @@ export class Attribute {
     return this.types[0] === 'uri' && this.parent?.types[0] === 'Reference'
   }
   get isIdentifierSystem(): boolean {
-    return /^identifier\[\d+\]\.system$/.test(this.path);
+    return /^identifier\[\d+\]\.system$/.test(this.path)
   }
 
   // tail returns the last element of the attribute path
