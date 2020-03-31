@@ -77,6 +77,9 @@ export class Attribute {
   get isReferenceType(): boolean {
     return this.types[0] === 'uri' && this.parent?.types[0] === 'Reference'
   }
+  get isRootIdentifier(): boolean {
+    return !this.parent && this.types[0] === 'Identifier'
+  }
 
   // tail returns the last element of the attribute path
   get tail(): string {
