@@ -239,7 +239,7 @@ export class Attribute {
   addExtension(definitionId: string, index?: number) {
     const childExtension = this.children.find(c => c.isExtension)
     if (!childExtension)
-      throw new Error(`attribute ${this.path} has not extension child`)
+      throw new Error(`attribute ${this.path} has no extension child`)
 
     const ext = new Attribute({
       ...childExtension.definition,
