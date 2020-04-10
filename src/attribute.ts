@@ -27,14 +27,20 @@ const PRIMITIVE_TYPES = [
 
 interface TypeElement {
   code: string
-  profile?: string
-  targetProfile?: string
+  profile?: string[]
+  targetProfile?: string[]
   extension?: {
     url: string
     valueUrl?: string
   }[]
 }
 
+// computeType transforms a FHIR 'Element' into a single definitionId
+// that can be fetched from the FHIR API.
+// It may be a either:
+// - a basic resource/complex-type/primitive-type (element.code)
+// - a profile (element.profile[0])
+// - an extension (element.extension[0].url)
 const computeType = (element: TypeElement): string => {
   if (element.extension && element.extension.length > 0) {
     return (
@@ -227,6 +233,9 @@ export class Attribute {
     this.items = this.items.filter(i => i.index! !== item.index!)
   }
 
+  // addExtension finds the "extension" child of an attribute (if any)
+  // and add an item to this array attribute. The child has a custom definitionId
+  // which is a profile on the Extension type.
   addExtension(definitionId: string, index?: number) {
     const childExtension = this.children.find(c => c.isExtension)
     if (!childExtension)
