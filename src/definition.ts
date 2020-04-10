@@ -18,12 +18,15 @@ const metaProperties: (keyof ResourceDefinition)[] = [
   'publisher',
 ]
 
+const extensionMetaProperties: (keyof ResourceDefinition)[] = ['context']
+
 const omittedResources = [
   'Element',
   'BackboneElement',
   'Resource',
   'DomainResource',
 ]
+const allowedAttributes = ['extension']
 
 export const isSliceOf = (
   slice: AttributeDefinition,
@@ -37,7 +40,14 @@ export const isChildOf = (
   child.path.substring(0, child.path.lastIndexOf('.')) === parent.path
 
 const shouldOmit = (attribute: AttributeDefinition): boolean => {
-  const baseResource: string = attribute.base.path.split('.')[0]
+  const parsedPath: string[] = attribute.base.path.split('.')
+
+  // if the attribute is whitelisted, it should not be omitted
+  const attributeTail = parsedPath.slice().pop()!
+  if (allowedAttributes.includes(attributeTail)) return false
+
+  // if the base resource is blacklisted, it should be omitted
+  const baseResource = parsedPath[0]
   return omittedResources.includes(baseResource)
 }
 
@@ -51,14 +61,24 @@ export const structurize = (fhirDefinition: {
   const buildMetadata = (): ResourceDefinition => {
     const res = {} as ResourceDefinition
 
-    // Build the metadata structure on the definition object
-    for (const property of metaProperties) {
+    const fill = (property: keyof ResourceDefinition) => {
       if (!fhirDefinition[property]) {
         console.warn(
           `[${fhirDefinition.id}] Missing property ${property} in StructureDefinition`,
         )
       }
       res[property] = fhirDefinition[property]
+    }
+
+    // Build the metadata structure on the definition object
+    metaProperties.forEach(fill)
+
+    // Add the metadata extension fields in case the definition is an extension.
+    if (
+      fhirDefinition.type === 'Extension' &&
+      fhirDefinition.derivation === 'constraint'
+    ) {
+      extensionMetaProperties.forEach(fill)
     }
 
     // Extract the cardinality and constraints from the first element of the snapshot

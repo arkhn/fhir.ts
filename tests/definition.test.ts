@@ -92,15 +92,16 @@ describe('structurize', () => {
       url: 'http://hl7.org/fhir/StructureDefinition/mock',
     })
 
-    expect(structured.attributes).toHaveLength(2)
-    expect(structured.attributes![0].children).toHaveLength(2)
-    expect(structured.attributes![0].children[0].children).toHaveLength(1)
+    expect(structured.attributes).toHaveLength(3)
+    expect(structured.attributes![0].children).toHaveLength(0)
+    expect(structured.attributes![1].children).toHaveLength(2)
+    expect(structured.attributes![1].children[0].children).toHaveLength(1)
     expect(
-      structured.attributes![0].children[0].children[0].children,
+      structured.attributes![1].children[0].children[0].children,
     ).toHaveLength(0)
-    expect(structured.attributes![0].children[1].children).toHaveLength(0)
-    expect(structured.attributes![1].children).toHaveLength(1)
-    expect(structured.attributes![1].children[0].children).toHaveLength(0)
+    expect(structured.attributes![1].children[1].children).toHaveLength(0)
+    expect(structured.attributes![2].children).toHaveLength(1)
+    expect(structured.attributes![2].children[0].children).toHaveLength(0)
   })
 
   it('handles primitive types', () => {
