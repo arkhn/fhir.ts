@@ -1,4 +1,4 @@
-import { AttributeDefinition } from './types'
+import { AttributeDefinition, ResourceDefinition } from './types'
 
 const toCamelCase = (s: string) => s[0].toUpperCase() + s.slice(1)
 
@@ -25,6 +25,27 @@ const PRIMITIVE_TYPES = [
   'xhtml',
 ]
 
+interface TypeElement {
+  code: string
+  profile?: string
+  targetProfile?: string
+  extension?: {
+    url: string
+    valueUrl?: string
+  }[]
+}
+
+const computeType = (element: TypeElement): string => {
+  if (element.extension && element.extension.length > 0) {
+    if (element.extension[0].valueUrl) return element.extension[0].valueUrl
+    return element.extension[0].url.split('/').pop()!
+  }
+  if (element.profile && element.profile.length > 0) {
+    return element.profile[0].split('/').pop()!
+  }
+  return element.code
+}
+
 // Attribute is the class used to represent hierarchically a FHIR resource based on its StructureDefinition.
 export class Attribute {
   parent?: Attribute
@@ -35,6 +56,7 @@ export class Attribute {
   id: string
   name: string
   definition: AttributeDefinition
+  extensions?: ResourceDefinition[]
   types: string[]
 
   isSlice: boolean
@@ -56,9 +78,7 @@ export class Attribute {
     this.isSlice = !!definition.sliceName
     this.isItem = false
 
-    this.types = definition.type
-      ? definition.type.map((type: any) => type.code)
-      : []
+    this.types = (definition.type || []).map(computeType)
 
     this.isPrimitive =
       this.types.length > 1
@@ -79,6 +99,9 @@ export class Attribute {
   }
   get isRootIdentifier(): boolean {
     return !this.parent && this.types[0] === 'Identifier'
+  }
+  get isExtension(): boolean {
+    return this.types[0] === 'Extension'
   }
 
   // tail returns the last element of the attribute path
@@ -160,7 +183,7 @@ export class Attribute {
   // The index may be provided (in case the attribute already exists in the db and has a pre-defined index)
   // Otherwise the index is computed with the first available index.
   // If the added item has slices, we must pass along the item's index.
-  addItem(index?: number): Attribute {
+  addItem(index?: number, attr?: Attribute): Attribute {
     const computeIndex = () => {
       if (index !== undefined) {
         if (this.items.map(it => it.index).includes(index)) {
@@ -176,9 +199,11 @@ export class Attribute {
     }
 
     if (!this.isArray) {
-      throw new Error(`trying to add an item to a non-array attribute`)
+      throw new Error(
+        `trying to add an item to non-array attribute ${this.path}`,
+      )
     }
-    const item = Attribute.from(this)
+    const item = Attribute.from(attr || this)
 
     item.definition.max = '1'
     item.parent = this.parent
@@ -188,6 +213,7 @@ export class Attribute {
       slice.isItem = true
       slice.index = item.index
     })
+    item.extensions = this.extensions
     this.items.push(item)
 
     return item
@@ -197,6 +223,18 @@ export class Attribute {
   removeItem(item: Attribute) {
     item.parent = undefined
     this.items = this.items.filter(i => i.index! !== item.index!)
+  }
+
+  addExtension(definitionId: string, index?: number) {
+    const childExtension = this.children.find(c => c.isExtension)
+    if (!childExtension)
+      throw new Error(`attribute ${this.path} has not extension child`)
+
+    const ext = new Attribute({
+      ...childExtension.definition,
+      type: [{ code: 'Extension', extension: [{ valueUrl: definitionId }] }],
+    })
+    return childExtension.addItem(index, ext)
   }
 
   // toJSON is used by JSON.parse and JSON.stringify when (de)serializing an object to/from JSON.

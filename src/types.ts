@@ -26,6 +26,10 @@ export type ResourceDefinition = {
   publisher: string
   min: string
   max: string
+  context?: {
+    type: string
+    expression: string
+  }[]
   constraint: Constraint[]
 }
 
