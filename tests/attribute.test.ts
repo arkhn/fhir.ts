@@ -297,7 +297,7 @@ describe('Attribute', () => {
     it('throws if the attribute is not an array', () => {
       const notArray = new Attribute(observationCodeDefinition)
       expect(() => notArray.addItem()).toThrowError(
-        'trying to add an item to a non-array attribute',
+        'trying to add an item to non-array attribute code',
       )
     })
 

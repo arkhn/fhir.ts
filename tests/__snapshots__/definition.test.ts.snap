@@ -4,6 +4,36 @@ exports[`structurize builds a structured version of a mock StructureDefinition (
 Object {
   "attributes": Array [
     Object {
+      "children": Array [],
+      "definition": Object {
+        "base": Object {
+          "max": "1",
+          "min": 0,
+          "path": "Resource.extension",
+        },
+        "id": "Mock.extension",
+        "max": "1",
+        "min": 0,
+        "path": "Mock.extension",
+        "type": Array [
+          Object {
+            "code": "string",
+          },
+        ],
+      },
+      "id": "extension",
+      "isItem": false,
+      "isPrimitive": true,
+      "isSlice": false,
+      "items": Array [],
+      "name": "extension",
+      "parent": undefined,
+      "slices": Array [],
+      "types": Array [
+        "string",
+      ],
+    },
+    Object {
       "children": Array [
         Object {
           "children": Array [
@@ -216,6 +246,69 @@ Object {
 exports[`structurize builds a structured version of a real StructureDefinition (snapshot) 1`] = `
 Object {
   "attributes": Array [
+    Object {
+      "children": Array [],
+      "definition": Object {
+        "alias": Array [
+          "extensions",
+          "user content",
+        ],
+        "base": Object {
+          "max": "*",
+          "min": 0,
+          "path": "DomainResource.extension",
+        },
+        "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "constraint": Array [
+          Object {
+            "expression": "hasValue() or (children().count() > id.count())",
+            "human": "All FHIR elements must have a @value or children",
+            "key": "ele-1",
+            "severity": "error",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element",
+            "xpath": "@value|f:*|h:div",
+          },
+          Object {
+            "expression": "extension.exists() != value.exists()",
+            "human": "Must have either extensions or value[x], not both",
+            "key": "ext-1",
+            "severity": "error",
+            "source": "http://hl7.org/fhir/StructureDefinition/Extension",
+            "xpath": "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \\"value\\")])",
+          },
+        ],
+        "definition": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "id": "Observation.extension",
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": Array [
+          Object {
+            "identity": "rim",
+            "map": "N/A",
+          },
+        ],
+        "max": "*",
+        "min": 0,
+        "path": "Observation.extension",
+        "short": "Additional content defined by implementations",
+        "type": Array [
+          Object {
+            "code": "Extension",
+          },
+        ],
+      },
+      "id": "extension",
+      "isItem": false,
+      "isPrimitive": false,
+      "isSlice": false,
+      "items": Array [],
+      "name": "extension",
+      "parent": undefined,
+      "slices": Array [],
+      "types": Array [
+        "Extension",
+      ],
+    },
     Object {
       "children": Array [],
       "definition": Object {
@@ -586,7 +679,153 @@ Object {
         Object {
           "children": Array [
             Object {
+              "children": Array [],
+              "definition": Object {
+                "alias": Array [
+                  "extensions",
+                  "user content",
+                ],
+                "base": Object {
+                  "max": "*",
+                  "min": 0,
+                  "path": "Element.extension",
+                },
+                "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                "constraint": Array [
+                  Object {
+                    "expression": "hasValue() or (children().count() > id.count())",
+                    "human": "All FHIR elements must have a @value or children",
+                    "key": "ele-1",
+                    "severity": "error",
+                    "source": "http://hl7.org/fhir/StructureDefinition/Element",
+                    "xpath": "@value|f:*|h:div",
+                  },
+                  Object {
+                    "expression": "extension.exists() != value.exists()",
+                    "human": "Must have either extensions or value[x], not both",
+                    "key": "ext-1",
+                    "severity": "error",
+                    "source": "http://hl7.org/fhir/StructureDefinition/Extension",
+                    "xpath": "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \\"value\\")])",
+                  },
+                ],
+                "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+                "id": "Observation.category:VSCat.extension",
+                "isModifier": false,
+                "isSummary": false,
+                "mapping": Array [
+                  Object {
+                    "identity": "rim",
+                    "map": "n/a",
+                  },
+                ],
+                "max": "*",
+                "min": 0,
+                "path": "Observation.category.extension",
+                "short": "Additional content defined by implementations",
+                "slicing": Object {
+                  "description": "Extensions are always sliced by (at least) url",
+                  "discriminator": Array [
+                    Object {
+                      "path": "url",
+                      "type": "value",
+                    },
+                  ],
+                  "rules": "open",
+                },
+                "type": Array [
+                  Object {
+                    "code": "Extension",
+                  },
+                ],
+              },
+              "id": "extension",
+              "isItem": false,
+              "isPrimitive": false,
+              "isSlice": false,
+              "items": Array [],
+              "name": "extension",
+              "parent": undefined,
+              "slices": Array [],
+              "types": Array [
+                "Extension",
+              ],
+            },
+            Object {
               "children": Array [
+                Object {
+                  "children": Array [],
+                  "definition": Object {
+                    "alias": Array [
+                      "extensions",
+                      "user content",
+                    ],
+                    "base": Object {
+                      "max": "*",
+                      "min": 0,
+                      "path": "Element.extension",
+                    },
+                    "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                    "constraint": Array [
+                      Object {
+                        "expression": "hasValue() or (children().count() > id.count())",
+                        "human": "All FHIR elements must have a @value or children",
+                        "key": "ele-1",
+                        "severity": "error",
+                        "source": "http://hl7.org/fhir/StructureDefinition/Element",
+                        "xpath": "@value|f:*|h:div",
+                      },
+                      Object {
+                        "expression": "extension.exists() != value.exists()",
+                        "human": "Must have either extensions or value[x], not both",
+                        "key": "ext-1",
+                        "severity": "error",
+                        "source": "http://hl7.org/fhir/StructureDefinition/Extension",
+                        "xpath": "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \\"value\\")])",
+                      },
+                    ],
+                    "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+                    "id": "Observation.category:VSCat.coding.extension",
+                    "isModifier": false,
+                    "isSummary": false,
+                    "mapping": Array [
+                      Object {
+                        "identity": "rim",
+                        "map": "n/a",
+                      },
+                    ],
+                    "max": "*",
+                    "min": 0,
+                    "path": "Observation.category.coding.extension",
+                    "short": "Additional content defined by implementations",
+                    "slicing": Object {
+                      "description": "Extensions are always sliced by (at least) url",
+                      "discriminator": Array [
+                        Object {
+                          "path": "url",
+                          "type": "value",
+                        },
+                      ],
+                      "rules": "open",
+                    },
+                    "type": Array [
+                      Object {
+                        "code": "Extension",
+                      },
+                    ],
+                  },
+                  "id": "extension",
+                  "isItem": false,
+                  "isPrimitive": false,
+                  "isSlice": false,
+                  "items": Array [],
+                  "name": "extension",
+                  "parent": undefined,
+                  "slices": Array [],
+                  "types": Array [
+                    "Extension",
+                  ],
+                },
                 Object {
                   "children": Array [],
                   "definition": Object {
@@ -1098,6 +1337,79 @@ Object {
         Object {
           "children": Array [],
           "definition": Object {
+            "alias": Array [
+              "extensions",
+              "user content",
+            ],
+            "base": Object {
+              "max": "*",
+              "min": 0,
+              "path": "Element.extension",
+            },
+            "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+            "constraint": Array [
+              Object {
+                "expression": "hasValue() or (children().count() > id.count())",
+                "human": "All FHIR elements must have a @value or children",
+                "key": "ele-1",
+                "severity": "error",
+                "source": "http://hl7.org/fhir/StructureDefinition/Element",
+                "xpath": "@value|f:*|h:div",
+              },
+              Object {
+                "expression": "extension.exists() != value.exists()",
+                "human": "Must have either extensions or value[x], not both",
+                "key": "ext-1",
+                "severity": "error",
+                "source": "http://hl7.org/fhir/StructureDefinition/Extension",
+                "xpath": "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \\"value\\")])",
+              },
+            ],
+            "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "id": "Observation.code.extension",
+            "isModifier": false,
+            "isSummary": false,
+            "mapping": Array [
+              Object {
+                "identity": "rim",
+                "map": "n/a",
+              },
+            ],
+            "max": "*",
+            "min": 0,
+            "path": "Observation.code.extension",
+            "short": "Additional content defined by implementations",
+            "slicing": Object {
+              "description": "Extensions are always sliced by (at least) url",
+              "discriminator": Array [
+                Object {
+                  "path": "url",
+                  "type": "value",
+                },
+              ],
+              "rules": "open",
+            },
+            "type": Array [
+              Object {
+                "code": "Extension",
+              },
+            ],
+          },
+          "id": "extension",
+          "isItem": false,
+          "isPrimitive": false,
+          "isSlice": false,
+          "items": Array [],
+          "name": "extension",
+          "parent": undefined,
+          "slices": Array [],
+          "types": Array [
+            "Extension",
+          ],
+        },
+        Object {
+          "children": Array [],
+          "definition": Object {
             "base": Object {
               "max": "*",
               "min": 0,
@@ -1167,6 +1479,79 @@ Object {
           "slices": Array [
             Object {
               "children": Array [
+                Object {
+                  "children": Array [],
+                  "definition": Object {
+                    "alias": Array [
+                      "extensions",
+                      "user content",
+                    ],
+                    "base": Object {
+                      "max": "*",
+                      "min": 0,
+                      "path": "Element.extension",
+                    },
+                    "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                    "constraint": Array [
+                      Object {
+                        "expression": "hasValue() or (children().count() > id.count())",
+                        "human": "All FHIR elements must have a @value or children",
+                        "key": "ele-1",
+                        "severity": "error",
+                        "source": "http://hl7.org/fhir/StructureDefinition/Element",
+                        "xpath": "@value|f:*|h:div",
+                      },
+                      Object {
+                        "expression": "extension.exists() != value.exists()",
+                        "human": "Must have either extensions or value[x], not both",
+                        "key": "ext-1",
+                        "severity": "error",
+                        "source": "http://hl7.org/fhir/StructureDefinition/Extension",
+                        "xpath": "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \\"value\\")])",
+                      },
+                    ],
+                    "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+                    "id": "Observation.code.coding:HeartRateCode.extension",
+                    "isModifier": false,
+                    "isSummary": false,
+                    "mapping": Array [
+                      Object {
+                        "identity": "rim",
+                        "map": "n/a",
+                      },
+                    ],
+                    "max": "*",
+                    "min": 0,
+                    "path": "Observation.code.coding.extension",
+                    "short": "Additional content defined by implementations",
+                    "slicing": Object {
+                      "description": "Extensions are always sliced by (at least) url",
+                      "discriminator": Array [
+                        Object {
+                          "path": "url",
+                          "type": "value",
+                        },
+                      ],
+                      "rules": "open",
+                    },
+                    "type": Array [
+                      Object {
+                        "code": "Extension",
+                      },
+                    ],
+                  },
+                  "id": "extension",
+                  "isItem": false,
+                  "isPrimitive": false,
+                  "isSlice": false,
+                  "items": Array [],
+                  "name": "extension",
+                  "parent": undefined,
+                  "slices": Array [],
+                  "types": Array [
+                    "Extension",
+                  ],
+                },
                 Object {
                   "children": Array [],
                   "definition": Object {
@@ -2196,6 +2581,79 @@ Object {
             Object {
               "children": Array [],
               "definition": Object {
+                "alias": Array [
+                  "extensions",
+                  "user content",
+                ],
+                "base": Object {
+                  "max": "*",
+                  "min": 0,
+                  "path": "Element.extension",
+                },
+                "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                "constraint": Array [
+                  Object {
+                    "expression": "hasValue() or (children().count() > id.count())",
+                    "human": "All FHIR elements must have a @value or children",
+                    "key": "ele-1",
+                    "severity": "error",
+                    "source": "http://hl7.org/fhir/StructureDefinition/Element",
+                    "xpath": "@value|f:*|h:div",
+                  },
+                  Object {
+                    "expression": "extension.exists() != value.exists()",
+                    "human": "Must have either extensions or value[x], not both",
+                    "key": "ext-1",
+                    "severity": "error",
+                    "source": "http://hl7.org/fhir/StructureDefinition/Extension",
+                    "xpath": "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \\"value\\")])",
+                  },
+                ],
+                "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+                "id": "Observation.value[x]:valueQuantity.extension",
+                "isModifier": false,
+                "isSummary": false,
+                "mapping": Array [
+                  Object {
+                    "identity": "rim",
+                    "map": "n/a",
+                  },
+                ],
+                "max": "*",
+                "min": 0,
+                "path": "Observation.value[x].extension",
+                "short": "Additional content defined by implementations",
+                "slicing": Object {
+                  "description": "Extensions are always sliced by (at least) url",
+                  "discriminator": Array [
+                    Object {
+                      "path": "url",
+                      "type": "value",
+                    },
+                  ],
+                  "rules": "open",
+                },
+                "type": Array [
+                  Object {
+                    "code": "Extension",
+                  },
+                ],
+              },
+              "id": "extension",
+              "isItem": false,
+              "isPrimitive": false,
+              "isSlice": false,
+              "items": Array [],
+              "name": "extension",
+              "parent": undefined,
+              "slices": Array [],
+              "types": Array [
+                "Extension",
+              ],
+            },
+            Object {
+              "children": Array [],
+              "definition": Object {
                 "base": Object {
                   "max": "1",
                   "min": 0,
@@ -3061,6 +3519,69 @@ If the use case requires BodySite to be handled as a separate resource (e.g. to 
         Object {
           "children": Array [],
           "definition": Object {
+            "alias": Array [
+              "extensions",
+              "user content",
+            ],
+            "base": Object {
+              "max": "*",
+              "min": 0,
+              "path": "Element.extension",
+            },
+            "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+            "constraint": Array [
+              Object {
+                "expression": "hasValue() or (children().count() > id.count())",
+                "human": "All FHIR elements must have a @value or children",
+                "key": "ele-1",
+                "severity": "error",
+                "source": "http://hl7.org/fhir/StructureDefinition/Element",
+                "xpath": "@value|f:*|h:div",
+              },
+              Object {
+                "expression": "extension.exists() != value.exists()",
+                "human": "Must have either extensions or value[x], not both",
+                "key": "ext-1",
+                "severity": "error",
+                "source": "http://hl7.org/fhir/StructureDefinition/Extension",
+                "xpath": "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \\"value\\")])",
+              },
+            ],
+            "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "id": "Observation.referenceRange.extension",
+            "isModifier": false,
+            "isSummary": false,
+            "mapping": Array [
+              Object {
+                "identity": "rim",
+                "map": "n/a",
+              },
+            ],
+            "max": "*",
+            "min": 0,
+            "path": "Observation.referenceRange.extension",
+            "short": "Additional content defined by implementations",
+            "type": Array [
+              Object {
+                "code": "Extension",
+              },
+            ],
+          },
+          "id": "extension",
+          "isItem": false,
+          "isPrimitive": false,
+          "isSlice": false,
+          "items": Array [],
+          "name": "extension",
+          "parent": undefined,
+          "slices": Array [],
+          "types": Array [
+            "Extension",
+          ],
+        },
+        Object {
+          "children": Array [],
+          "definition": Object {
             "base": Object {
               "max": "1",
               "min": 0,
@@ -3115,7 +3636,7 @@ If the use case requires BodySite to be handled as a separate resource (e.g. to 
           "parent": undefined,
           "slices": Array [],
           "types": Array [
-            "Quantity",
+            "SimpleQuantity",
           ],
         },
         Object {
@@ -3175,7 +3696,7 @@ If the use case requires BodySite to be handled as a separate resource (e.g. to 
           "parent": undefined,
           "slices": Array [],
           "types": Array [
-            "Quantity",
+            "SimpleQuantity",
           ],
         },
         Object {
@@ -3624,6 +4145,69 @@ OR
     },
     Object {
       "children": Array [
+        Object {
+          "children": Array [],
+          "definition": Object {
+            "alias": Array [
+              "extensions",
+              "user content",
+            ],
+            "base": Object {
+              "max": "*",
+              "min": 0,
+              "path": "Element.extension",
+            },
+            "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+            "constraint": Array [
+              Object {
+                "expression": "hasValue() or (children().count() > id.count())",
+                "human": "All FHIR elements must have a @value or children",
+                "key": "ele-1",
+                "severity": "error",
+                "source": "http://hl7.org/fhir/StructureDefinition/Element",
+                "xpath": "@value|f:*|h:div",
+              },
+              Object {
+                "expression": "extension.exists() != value.exists()",
+                "human": "Must have either extensions or value[x], not both",
+                "key": "ext-1",
+                "severity": "error",
+                "source": "http://hl7.org/fhir/StructureDefinition/Extension",
+                "xpath": "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \\"value\\")])",
+              },
+            ],
+            "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "id": "Observation.component.extension",
+            "isModifier": false,
+            "isSummary": false,
+            "mapping": Array [
+              Object {
+                "identity": "rim",
+                "map": "n/a",
+              },
+            ],
+            "max": "*",
+            "min": 0,
+            "path": "Observation.component.extension",
+            "short": "Additional content defined by implementations",
+            "type": Array [
+              Object {
+                "code": "Extension",
+              },
+            ],
+          },
+          "id": "extension",
+          "isItem": false,
+          "isPrimitive": false,
+          "isSlice": false,
+          "items": Array [],
+          "name": "extension",
+          "parent": undefined,
+          "slices": Array [],
+          "types": Array [
+            "Extension",
+          ],
+        },
         Object {
           "children": Array [],
           "definition": Object {

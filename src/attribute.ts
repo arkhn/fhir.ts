@@ -37,8 +37,10 @@ interface TypeElement {
 
 const computeType = (element: TypeElement): string => {
   if (element.extension && element.extension.length > 0) {
-    if (element.extension[0].valueUrl) return element.extension[0].valueUrl
-    return element.extension[0].url.split('/').pop()!
+    return (
+      element.extension[0].valueUrl ||
+      element.extension[0].url.split('/').pop()!
+    )
   }
   if (element.profile && element.profile.length > 0) {
     return element.profile[0].split('/').pop()!
