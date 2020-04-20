@@ -28,11 +28,18 @@ const omittedResources = [
 ]
 const allowedAttributes = ['extension']
 
+export const isChoiceOf = (
+  choice: AttributeDefinition,
+  attr: AttributeDefinition,
+): boolean =>
+  choice.path === attr.path && !!choice.sliceName && choice.path.endsWith('[x]')
+
 export const isSliceOf = (
   slice: AttributeDefinition,
   attr: AttributeDefinition,
-): boolean => slice.path === attr.path && !!slice.sliceName
-
+): boolean => {
+  return slice.path === attr.path && !!slice.sliceName && !attr.sliceName
+}
 export const isChildOf = (
   child: AttributeDefinition,
   parent: AttributeDefinition,
@@ -115,6 +122,13 @@ export const structurize = (fhirDefinition: {
       }
 
       if (previous) {
+        if (isChoiceOf(current, previous.definition)) {
+          const type = new Attribute(current)
+          previous.addChoice(type)
+          // keep iterating on the snapshot elements using the type attribute as previous
+          return recBuildAttributes(rest, res, type)
+        }
+
         if (isSliceOf(current, previous.definition)) {
           const slice = new Attribute(current)
           previous.addSlice(slice)
@@ -131,7 +145,7 @@ export const structurize = (fhirDefinition: {
         }
 
         // if current is not a children of previous, try with the parent of previous
-        return recBuildAttributes([current, ...rest], res, previous.parent)
+        return recBuildAttributes(attributes, res, previous.parent)
       }
 
       // if there is no previous attribute, append the attribute to the attributes list

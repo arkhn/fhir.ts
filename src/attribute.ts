@@ -58,6 +58,7 @@ const computeType = (element: TypeElement): string => {
 export class Attribute {
   parent?: Attribute
   children: Attribute[]
+  choices: Attribute[]
   slices: Attribute[]
   items: Attribute[]
 
@@ -77,6 +78,7 @@ export class Attribute {
   // is a single item of the snapshot.element array of a StructureDefinition.
   constructor(definition: AttributeDefinition) {
     this.children = []
+    this.choices = []
     this.slices = []
     this.items = []
 
@@ -144,6 +146,9 @@ export class Attribute {
     serialized.children.forEach((child: Attribute) =>
       attr.addChild(Attribute.from(child)),
     )
+    serialized.choices.forEach((choice: Attribute) =>
+      attr.addChoice(Attribute.from(choice)),
+    )
     serialized.slices.forEach((slice: Attribute) =>
       attr.addSlice(Attribute.from(slice)),
     )
@@ -175,15 +180,20 @@ export class Attribute {
     child.parent = this
     this.children.push(child)
   }
+  // addChoice adds a choice type attribute to this and update its parent with the current parent.
+  // Note that if this attribute is an item of an array, the slice must be an item as well (and we pass along the current index)
+  addChoice(choice: Attribute) {
+    choice.parent = this.parent
+    if (this.isItem) {
+      choice.isItem = true
+      choice.index = this.index
+    }
+    this.choices.push(choice)
+  }
 
   // addSlice adds a slice attribute to this and update the parent of the slice with the current parent.
-  // Note that if this attribute is an item of an array, the slice must be an item as well (and we pass along the current index)
   addSlice(slice: Attribute) {
-    slice.parent = this.parent
-    if (this.isItem) {
-      slice.isItem = true
-      slice.index = this.index
-    }
+    slice.parent = this
     this.slices.push(slice)
   }
 
@@ -217,9 +227,9 @@ export class Attribute {
     item.parent = this.parent
     item.isItem = true
     item.index = computeIndex()
-    item.slices.forEach(slice => {
-      slice.isItem = true
-      slice.index = item.index
+    item.choices.forEach(choice => {
+      choice.isItem = true
+      choice.index = item.index
     })
     item.extensions = this.extensions
     this.items.push(item)
