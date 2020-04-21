@@ -184,10 +184,6 @@ export class Attribute {
   // Note that if this attribute is an item of an array, the slice must be an item as well (and we pass along the current index)
   addChoice(choice: Attribute) {
     choice.parent = this.parent
-    if (this.isItem) {
-      choice.isItem = true
-      choice.index = this.index
-    }
     this.choices.push(choice)
   }
 
