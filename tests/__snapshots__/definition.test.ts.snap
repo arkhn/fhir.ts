@@ -5,6 +5,7 @@ Object {
   "attributes": Array [
     Object {
       "children": Array [],
+      "choices": Array [],
       "definition": Object {
         "base": Object {
           "max": "1",
@@ -39,6 +40,7 @@ Object {
           "children": Array [
             Object {
               "children": Array [],
+              "choices": Array [],
               "definition": Object {
                 "base": Object {
                   "max": "1",
@@ -68,6 +70,7 @@ Object {
               ],
             },
           ],
+          "choices": Array [],
           "definition": Object {
             "base": Object {
               "max": "1",
@@ -98,6 +101,7 @@ Object {
         },
         Object {
           "children": Array [],
+          "choices": Array [],
           "definition": Object {
             "base": Object {
               "max": "1",
@@ -127,6 +131,7 @@ Object {
           ],
         },
       ],
+      "choices": Array [],
       "definition": Object {
         "base": Object {
           "max": "1",
@@ -159,6 +164,7 @@ Object {
       "children": Array [
         Object {
           "children": Array [],
+          "choices": Array [],
           "definition": Object {
             "base": Object {
               "max": "1",
@@ -188,6 +194,7 @@ Object {
           ],
         },
       ],
+      "choices": Array [],
       "definition": Object {
         "base": Object {
           "max": "1",
@@ -248,6 +255,7 @@ Object {
   "attributes": Array [
     Object {
       "children": Array [],
+      "choices": Array [],
       "definition": Object {
         "alias": Array [
           "extensions",
@@ -311,6 +319,7 @@ Object {
     },
     Object {
       "children": Array [],
+      "choices": Array [],
       "definition": Object {
         "base": Object {
           "max": "*",
@@ -374,6 +383,7 @@ Object {
     },
     Object {
       "children": Array [],
+      "choices": Array [],
       "definition": Object {
         "alias": Array [
           "Fulfills",
@@ -444,6 +454,7 @@ Object {
     },
     Object {
       "children": Array [],
+      "choices": Array [],
       "definition": Object {
         "alias": Array [
           "Container",
@@ -514,6 +525,7 @@ Object {
     },
     Object {
       "children": Array [],
+      "choices": Array [],
       "definition": Object {
         "base": Object {
           "max": "1",
@@ -600,6 +612,7 @@ Object {
     },
     Object {
       "children": Array [],
+      "choices": Array [],
       "definition": Object {
         "base": Object {
           "max": "*",
@@ -680,6 +693,7 @@ Object {
           "children": Array [
             Object {
               "children": Array [],
+              "choices": Array [],
               "definition": Object {
                 "alias": Array [
                   "extensions",
@@ -755,6 +769,7 @@ Object {
               "children": Array [
                 Object {
                   "children": Array [],
+                  "choices": Array [],
                   "definition": Object {
                     "alias": Array [
                       "extensions",
@@ -828,6 +843,7 @@ Object {
                 },
                 Object {
                   "children": Array [],
+                  "choices": Array [],
                   "definition": Object {
                     "base": Object {
                       "max": "1",
@@ -890,6 +906,7 @@ Object {
                 },
                 Object {
                   "children": Array [],
+                  "choices": Array [],
                   "definition": Object {
                     "base": Object {
                       "max": "1",
@@ -949,6 +966,7 @@ Object {
                 },
                 Object {
                   "children": Array [],
+                  "choices": Array [],
                   "definition": Object {
                     "base": Object {
                       "max": "1",
@@ -1010,6 +1028,7 @@ Object {
                 },
                 Object {
                   "children": Array [],
+                  "choices": Array [],
                   "definition": Object {
                     "base": Object {
                       "max": "1",
@@ -1075,6 +1094,7 @@ Object {
                 },
                 Object {
                   "children": Array [],
+                  "choices": Array [],
                   "definition": Object {
                     "base": Object {
                       "max": "1",
@@ -1134,6 +1154,7 @@ Object {
                   ],
                 },
               ],
+              "choices": Array [],
               "definition": Object {
                 "base": Object {
                   "max": "*",
@@ -1195,6 +1216,7 @@ Object {
             },
             Object {
               "children": Array [],
+              "choices": Array [],
               "definition": Object {
                 "base": Object {
                   "max": "1",
@@ -1260,6 +1282,7 @@ Object {
               ],
             },
           ],
+          "choices": Array [],
           "definition": Object {
             "base": Object {
               "max": "*",
@@ -1336,6 +1359,7 @@ Object {
       "children": Array [
         Object {
           "children": Array [],
+          "choices": Array [],
           "definition": Object {
             "alias": Array [
               "extensions",
@@ -1409,6 +1433,7 @@ Object {
         },
         Object {
           "children": Array [],
+          "choices": Array [],
           "definition": Object {
             "base": Object {
               "max": "*",
@@ -1481,6 +1506,7 @@ Object {
               "children": Array [
                 Object {
                   "children": Array [],
+                  "choices": Array [],
                   "definition": Object {
                     "alias": Array [
                       "extensions",
@@ -1554,6 +1580,7 @@ Object {
                 },
                 Object {
                   "children": Array [],
+                  "choices": Array [],
                   "definition": Object {
                     "base": Object {
                       "max": "1",
@@ -1615,6 +1642,7 @@ Object {
                 },
                 Object {
                   "children": Array [],
+                  "choices": Array [],
                   "definition": Object {
                     "base": Object {
                       "max": "1",
@@ -1674,6 +1702,7 @@ Object {
                 },
                 Object {
                   "children": Array [],
+                  "choices": Array [],
                   "definition": Object {
                     "base": Object {
                       "max": "1",
@@ -1734,6 +1763,7 @@ Object {
                 },
                 Object {
                   "children": Array [],
+                  "choices": Array [],
                   "definition": Object {
                     "base": Object {
                       "max": "1",
@@ -1799,6 +1829,7 @@ Object {
                 },
                 Object {
                   "children": Array [],
+                  "choices": Array [],
                   "definition": Object {
                     "base": Object {
                       "max": "1",
@@ -1858,6 +1889,7 @@ Object {
                   ],
                 },
               ],
+              "choices": Array [],
               "definition": Object {
                 "base": Object {
                   "max": "*",
@@ -1924,6 +1956,7 @@ Object {
         },
         Object {
           "children": Array [],
+          "choices": Array [],
           "definition": Object {
             "base": Object {
               "max": "1",
@@ -1989,6 +2022,7 @@ Object {
           ],
         },
       ],
+      "choices": Array [],
       "definition": Object {
         "alias": Array [
           "Name",
@@ -2077,6 +2111,7 @@ Object {
     },
     Object {
       "children": Array [],
+      "choices": Array [],
       "definition": Object {
         "base": Object {
           "max": "1",
@@ -2149,6 +2184,7 @@ Object {
     },
     Object {
       "children": Array [],
+      "choices": Array [],
       "definition": Object {
         "base": Object {
           "max": "*",
@@ -2221,6 +2257,7 @@ Object {
     },
     Object {
       "children": Array [],
+      "choices": Array [],
       "definition": Object {
         "alias": Array [
           "Context",
@@ -2291,6 +2328,166 @@ Object {
     },
     Object {
       "children": Array [],
+      "choices": Array [
+        Object {
+          "children": Array [],
+          "choices": Array [],
+          "definition": Object {
+            "alias": Array [
+              "Occurrence",
+            ],
+            "base": Object {
+              "max": "1",
+              "min": 0,
+              "path": "Observation.effective[x]",
+            },
+            "comment": "At least a date should be present unless this observation is a historical report.  For recording imprecise or \\"fuzzy\\" times (For example, a blood glucose measurement taken \\"after breakfast\\") use the [Timing](http://hl7.org/fhir/datatypes.html#timing) datatype which allow the measurement to be tied to regular life events.",
+            "condition": Array [
+              "vs-1",
+            ],
+            "constraint": Array [
+              Object {
+                "expression": "hasValue() or (children().count() > id.count())",
+                "human": "All FHIR elements must have a @value or children",
+                "key": "ele-1",
+                "severity": "error",
+                "source": "http://hl7.org/fhir/StructureDefinition/Element",
+                "xpath": "@value|f:*|h:div",
+              },
+              Object {
+                "expression": "($this as dateTime).toString().length() >= 8",
+                "human": "if Observation.effective[x] is dateTime and has a value then that value shall be precise to the day",
+                "key": "vs-1",
+                "severity": "error",
+                "xpath": "f:effectiveDateTime[matches(@value, '^\\\\d{4}-\\\\d{2}-\\\\d{2}')]",
+              },
+            ],
+            "definition": "Often just a dateTime for Vital Signs.",
+            "id": "Observation.effectiveDateTime",
+            "isModifier": false,
+            "isSummary": true,
+            "mapping": Array [
+              Object {
+                "identity": "workflow",
+                "map": "Event.occurrence[x]",
+              },
+              Object {
+                "identity": "w5",
+                "map": "FiveWs.done[x]",
+              },
+              Object {
+                "identity": "v2",
+                "map": "OBX-14, and/or OBX-19 after v2.4  (depends on who observation made)",
+              },
+              Object {
+                "identity": "rim",
+                "map": "effectiveTime",
+              },
+            ],
+            "max": "1",
+            "min": 1,
+            "mustSupport": true,
+            "path": "Observation.effectiveDateTime",
+            "requirements": "Knowing when an observation was deemed true is important to its relevance as well as determining trends.",
+            "short": "Often just a dateTime for Vital Signs",
+            "type": Array [
+              Object {
+                "code": "dateTime",
+              },
+            ],
+          },
+          "id": "effectiveDateTime",
+          "isItem": false,
+          "isPrimitive": true,
+          "isSlice": false,
+          "items": Array [],
+          "name": "effectiveDateTime",
+          "parent": undefined,
+          "slices": Array [],
+          "types": Array [
+            "dateTime",
+          ],
+        },
+        Object {
+          "children": Array [],
+          "choices": Array [],
+          "definition": Object {
+            "alias": Array [
+              "Occurrence",
+            ],
+            "base": Object {
+              "max": "1",
+              "min": 0,
+              "path": "Observation.effective[x]",
+            },
+            "comment": "At least a date should be present unless this observation is a historical report.  For recording imprecise or \\"fuzzy\\" times (For example, a blood glucose measurement taken \\"after breakfast\\") use the [Timing](http://hl7.org/fhir/datatypes.html#timing) datatype which allow the measurement to be tied to regular life events.",
+            "condition": Array [
+              "vs-1",
+            ],
+            "constraint": Array [
+              Object {
+                "expression": "hasValue() or (children().count() > id.count())",
+                "human": "All FHIR elements must have a @value or children",
+                "key": "ele-1",
+                "severity": "error",
+                "source": "http://hl7.org/fhir/StructureDefinition/Element",
+                "xpath": "@value|f:*|h:div",
+              },
+              Object {
+                "expression": "($this as dateTime).toString().length() >= 8",
+                "human": "if Observation.effective[x] is dateTime and has a value then that value shall be precise to the day",
+                "key": "vs-1",
+                "severity": "error",
+                "xpath": "f:effectiveDateTime[matches(@value, '^\\\\d{4}-\\\\d{2}-\\\\d{2}')]",
+              },
+            ],
+            "definition": "Often just a dateTime for Vital Signs.",
+            "id": "Observation.effectivePeriod",
+            "isModifier": false,
+            "isSummary": true,
+            "mapping": Array [
+              Object {
+                "identity": "workflow",
+                "map": "Event.occurrence[x]",
+              },
+              Object {
+                "identity": "w5",
+                "map": "FiveWs.done[x]",
+              },
+              Object {
+                "identity": "v2",
+                "map": "OBX-14, and/or OBX-19 after v2.4  (depends on who observation made)",
+              },
+              Object {
+                "identity": "rim",
+                "map": "effectiveTime",
+              },
+            ],
+            "max": "1",
+            "min": 1,
+            "mustSupport": true,
+            "path": "Observation.effectivePeriod",
+            "requirements": "Knowing when an observation was deemed true is important to its relevance as well as determining trends.",
+            "short": "Often just a dateTime for Vital Signs",
+            "type": Array [
+              Object {
+                "code": "Period",
+              },
+            ],
+          },
+          "id": "effectivePeriod",
+          "isItem": false,
+          "isPrimitive": false,
+          "isSlice": false,
+          "items": Array [],
+          "name": "effectivePeriod",
+          "parent": undefined,
+          "slices": Array [],
+          "types": Array [
+            "Period",
+          ],
+        },
+      ],
       "definition": Object {
         "alias": Array [
           "Occurrence",
@@ -2373,6 +2570,7 @@ Object {
     },
     Object {
       "children": Array [],
+      "choices": Array [],
       "definition": Object {
         "base": Object {
           "max": "1",
@@ -2432,6 +2630,7 @@ Object {
     },
     Object {
       "children": Array [],
+      "choices": Array [],
       "definition": Object {
         "base": Object {
           "max": "*",
@@ -2503,83 +2702,12 @@ Object {
     },
     Object {
       "children": Array [],
-      "definition": Object {
-        "base": Object {
-          "max": "1",
-          "min": 0,
-          "path": "Observation.value[x]",
-        },
-        "comment": "An observation may have; 1)  a single value here, 2)  both a value and a set of related or component values,  or 3)  only a set of related or component values. If a value is present, the datatype for this element should be determined by Observation.code.  A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](http://hl7.org/fhir/observation.html#notes) below.",
-        "condition": Array [
-          "obs-7",
-          "vs-2",
-        ],
-        "constraint": Array [
-          Object {
-            "expression": "hasValue() or (children().count() > id.count())",
-            "human": "All FHIR elements must have a @value or children",
-            "key": "ele-1",
-            "severity": "error",
-            "source": "http://hl7.org/fhir/StructureDefinition/Element",
-            "xpath": "@value|f:*|h:div",
-          },
-        ],
-        "definition": "Vital Signs value are recorded using the Quantity data type. For supporting observations such as Cuff size could use other datatypes such as CodeableConcept.",
-        "id": "Observation.value[x]",
-        "isModifier": false,
-        "isSummary": true,
-        "mapping": Array [
-          Object {
-            "identity": "sct-concept",
-            "map": "< 441742003 |Evaluation finding|",
-          },
-          Object {
-            "identity": "v2",
-            "map": "OBX.2, OBX.5, OBX.6",
-          },
-          Object {
-            "identity": "rim",
-            "map": "value",
-          },
-          Object {
-            "identity": "sct-attr",
-            "map": "363714003 |Interprets|",
-          },
-        ],
-        "max": "1",
-        "min": 0,
-        "mustSupport": true,
-        "path": "Observation.value[x]",
-        "requirements": "9. SHALL contain exactly one [1..1] value with @xsi:type=\\"PQ\\" (CONF:7305).",
-        "short": "Vital Signs value are recorded using the Quantity data type. For supporting observations such as Cuff size could use other datatypes such as CodeableConcept.",
-        "slicing": Object {
-          "discriminator": Array [
-            Object {
-              "path": "$this",
-              "type": "type",
-            },
-          ],
-          "ordered": false,
-          "rules": "closed",
-        },
-        "type": Array [
-          Object {
-            "code": "Quantity",
-          },
-        ],
-      },
-      "id": "value[x]",
-      "isItem": false,
-      "isPrimitive": false,
-      "isSlice": false,
-      "items": Array [],
-      "name": "value[x]",
-      "parent": undefined,
-      "slices": Array [
+      "choices": Array [
         Object {
           "children": Array [
             Object {
               "children": Array [],
+              "choices": Array [],
               "definition": Object {
                 "alias": Array [
                   "extensions",
@@ -2653,6 +2781,7 @@ Object {
             },
             Object {
               "children": Array [],
+              "choices": Array [],
               "definition": Object {
                 "base": Object {
                   "max": "1",
@@ -2710,6 +2839,7 @@ Object {
             },
             Object {
               "children": Array [],
+              "choices": Array [],
               "definition": Object {
                 "base": Object {
                   "max": "1",
@@ -2778,6 +2908,7 @@ Object {
             },
             Object {
               "children": Array [],
+              "choices": Array [],
               "definition": Object {
                 "base": Object {
                   "max": "1",
@@ -2840,6 +2971,7 @@ Object {
             },
             Object {
               "children": Array [],
+              "choices": Array [],
               "definition": Object {
                 "base": Object {
                   "max": "1",
@@ -2900,6 +3032,7 @@ Object {
             },
             Object {
               "children": Array [],
+              "choices": Array [],
               "definition": Object {
                 "base": Object {
                   "max": "1",
@@ -2957,6 +3090,7 @@ Object {
               ],
             },
           ],
+          "choices": Array [],
           "definition": Object {
             "base": Object {
               "max": "1",
@@ -3026,12 +3160,86 @@ Object {
           ],
         },
       ],
+      "definition": Object {
+        "base": Object {
+          "max": "1",
+          "min": 0,
+          "path": "Observation.value[x]",
+        },
+        "comment": "An observation may have; 1)  a single value here, 2)  both a value and a set of related or component values,  or 3)  only a set of related or component values. If a value is present, the datatype for this element should be determined by Observation.code.  A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](http://hl7.org/fhir/observation.html#notes) below.",
+        "condition": Array [
+          "obs-7",
+          "vs-2",
+        ],
+        "constraint": Array [
+          Object {
+            "expression": "hasValue() or (children().count() > id.count())",
+            "human": "All FHIR elements must have a @value or children",
+            "key": "ele-1",
+            "severity": "error",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element",
+            "xpath": "@value|f:*|h:div",
+          },
+        ],
+        "definition": "Vital Signs value are recorded using the Quantity data type. For supporting observations such as Cuff size could use other datatypes such as CodeableConcept.",
+        "id": "Observation.value[x]",
+        "isModifier": false,
+        "isSummary": true,
+        "mapping": Array [
+          Object {
+            "identity": "sct-concept",
+            "map": "< 441742003 |Evaluation finding|",
+          },
+          Object {
+            "identity": "v2",
+            "map": "OBX.2, OBX.5, OBX.6",
+          },
+          Object {
+            "identity": "rim",
+            "map": "value",
+          },
+          Object {
+            "identity": "sct-attr",
+            "map": "363714003 |Interprets|",
+          },
+        ],
+        "max": "1",
+        "min": 0,
+        "mustSupport": true,
+        "path": "Observation.value[x]",
+        "requirements": "9. SHALL contain exactly one [1..1] value with @xsi:type=\\"PQ\\" (CONF:7305).",
+        "short": "Vital Signs value are recorded using the Quantity data type. For supporting observations such as Cuff size could use other datatypes such as CodeableConcept.",
+        "slicing": Object {
+          "discriminator": Array [
+            Object {
+              "path": "$this",
+              "type": "type",
+            },
+          ],
+          "ordered": false,
+          "rules": "closed",
+        },
+        "type": Array [
+          Object {
+            "code": "Quantity",
+          },
+        ],
+      },
+      "id": "value[x]",
+      "isItem": false,
+      "isPrimitive": false,
+      "isSlice": false,
+      "items": Array [],
+      "name": "value[x]",
+      "parent": undefined,
+      "slices": Array [],
       "types": Array [
         "Quantity",
       ],
     },
     Object {
       "children": Array [],
+      "choices": Array [],
       "definition": Object {
         "base": Object {
           "max": "1",
@@ -3106,6 +3314,7 @@ The alternate way is to use the value element for actual observations and use th
     },
     Object {
       "children": Array [],
+      "choices": Array [],
       "definition": Object {
         "alias": Array [
           "Abnormal Flag",
@@ -3184,6 +3393,7 @@ The alternate way is to use the value element for actual observations and use th
     },
     Object {
       "children": Array [],
+      "choices": Array [],
       "definition": Object {
         "base": Object {
           "max": "*",
@@ -3240,6 +3450,7 @@ The alternate way is to use the value element for actual observations and use th
     },
     Object {
       "children": Array [],
+      "choices": Array [],
       "definition": Object {
         "base": Object {
           "max": "1",
@@ -3316,6 +3527,7 @@ If the use case requires BodySite to be handled as a separate resource (e.g. to 
     },
     Object {
       "children": Array [],
+      "choices": Array [],
       "definition": Object {
         "base": Object {
           "max": "1",
@@ -3383,6 +3595,7 @@ If the use case requires BodySite to be handled as a separate resource (e.g. to 
     },
     Object {
       "children": Array [],
+      "choices": Array [],
       "definition": Object {
         "base": Object {
           "max": "1",
@@ -3449,6 +3662,7 @@ If the use case requires BodySite to be handled as a separate resource (e.g. to 
     },
     Object {
       "children": Array [],
+      "choices": Array [],
       "definition": Object {
         "base": Object {
           "max": "1",
@@ -3518,6 +3732,7 @@ If the use case requires BodySite to be handled as a separate resource (e.g. to 
       "children": Array [
         Object {
           "children": Array [],
+          "choices": Array [],
           "definition": Object {
             "alias": Array [
               "extensions",
@@ -3581,6 +3796,7 @@ If the use case requires BodySite to be handled as a separate resource (e.g. to 
         },
         Object {
           "children": Array [],
+          "choices": Array [],
           "definition": Object {
             "base": Object {
               "max": "1",
@@ -3641,6 +3857,7 @@ If the use case requires BodySite to be handled as a separate resource (e.g. to 
         },
         Object {
           "children": Array [],
+          "choices": Array [],
           "definition": Object {
             "base": Object {
               "max": "1",
@@ -3701,6 +3918,7 @@ If the use case requires BodySite to be handled as a separate resource (e.g. to 
         },
         Object {
           "children": Array [],
+          "choices": Array [],
           "definition": Object {
             "base": Object {
               "max": "1",
@@ -3778,6 +3996,7 @@ OR
         },
         Object {
           "children": Array [],
+          "choices": Array [],
           "definition": Object {
             "base": Object {
               "max": "*",
@@ -3855,6 +4074,7 @@ OR
         },
         Object {
           "children": Array [],
+          "choices": Array [],
           "definition": Object {
             "base": Object {
               "max": "1",
@@ -3906,6 +4126,7 @@ OR
         },
         Object {
           "children": Array [],
+          "choices": Array [],
           "definition": Object {
             "base": Object {
               "max": "1",
@@ -3959,6 +4180,7 @@ OR
           ],
         },
       ],
+      "choices": Array [],
       "definition": Object {
         "base": Object {
           "max": "*",
@@ -4022,6 +4244,7 @@ OR
     },
     Object {
       "children": Array [],
+      "choices": Array [],
       "definition": Object {
         "base": Object {
           "max": "*",
@@ -4082,6 +4305,7 @@ OR
     },
     Object {
       "children": Array [],
+      "choices": Array [],
       "definition": Object {
         "base": Object {
           "max": "*",
@@ -4147,6 +4371,7 @@ OR
       "children": Array [
         Object {
           "children": Array [],
+          "choices": Array [],
           "definition": Object {
             "alias": Array [
               "extensions",
@@ -4210,6 +4435,7 @@ OR
         },
         Object {
           "children": Array [],
+          "choices": Array [],
           "definition": Object {
             "base": Object {
               "max": "1",
@@ -4287,6 +4513,888 @@ OR
         },
         Object {
           "children": Array [],
+          "choices": Array [
+            Object {
+              "children": Array [],
+              "choices": Array [],
+              "definition": Object {
+                "base": Object {
+                  "max": "1",
+                  "min": 0,
+                  "path": "Observation.component.value[x]",
+                },
+                "binding": Object {
+                  "description": "Common UCUM units for recording Vital Signs.",
+                  "extension": Array [
+                    Object {
+                      "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+                      "valueString": "VitalSignsUnits",
+                    },
+                  ],
+                  "strength": "required",
+                  "valueSet": "http://hl7.org/fhir/ValueSet/ucum-vitals-common|4.0.1",
+                },
+                "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](http://hl7.org/fhir/observation.html#notes) below.",
+                "condition": Array [
+                  "vs-3",
+                ],
+                "constraint": Array [
+                  Object {
+                    "expression": "hasValue() or (children().count() > id.count())",
+                    "human": "All FHIR elements must have a @value or children",
+                    "key": "ele-1",
+                    "severity": "error",
+                    "source": "http://hl7.org/fhir/StructureDefinition/Element",
+                    "xpath": "@value|f:*|h:div",
+                  },
+                ],
+                "definition": "Vital Sign Value recorded with UCUM.",
+                "id": "Observation.component.valueQuantity",
+                "isModifier": false,
+                "isSummary": true,
+                "mapping": Array [
+                  Object {
+                    "identity": "sct-concept",
+                    "map": "363714003 |Interprets| < 441742003 |Evaluation finding|",
+                  },
+                  Object {
+                    "identity": "v2",
+                    "map": "OBX.2, OBX.5, OBX.6",
+                  },
+                  Object {
+                    "identity": "rim",
+                    "map": "value",
+                  },
+                  Object {
+                    "identity": "sct-attr",
+                    "map": "363714003 |Interprets|",
+                  },
+                ],
+                "max": "1",
+                "min": 0,
+                "mustSupport": true,
+                "path": "Observation.component.valueQuantity",
+                "requirements": "9. SHALL contain exactly one [1..1] value with @xsi:type=\\"PQ\\" (CONF:7305).",
+                "short": "Vital Sign Value recorded with UCUM",
+                "type": Array [
+                  Object {
+                    "code": "Quantity",
+                  },
+                ],
+              },
+              "id": "valueQuantity",
+              "isItem": false,
+              "isPrimitive": false,
+              "isSlice": false,
+              "items": Array [],
+              "name": "valueQuantity",
+              "parent": undefined,
+              "slices": Array [],
+              "types": Array [
+                "Quantity",
+              ],
+            },
+            Object {
+              "children": Array [],
+              "choices": Array [],
+              "definition": Object {
+                "base": Object {
+                  "max": "1",
+                  "min": 0,
+                  "path": "Observation.component.value[x]",
+                },
+                "binding": Object {
+                  "description": "Common UCUM units for recording Vital Signs.",
+                  "extension": Array [
+                    Object {
+                      "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+                      "valueString": "VitalSignsUnits",
+                    },
+                  ],
+                  "strength": "required",
+                  "valueSet": "http://hl7.org/fhir/ValueSet/ucum-vitals-common|4.0.1",
+                },
+                "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](http://hl7.org/fhir/observation.html#notes) below.",
+                "condition": Array [
+                  "vs-3",
+                ],
+                "constraint": Array [
+                  Object {
+                    "expression": "hasValue() or (children().count() > id.count())",
+                    "human": "All FHIR elements must have a @value or children",
+                    "key": "ele-1",
+                    "severity": "error",
+                    "source": "http://hl7.org/fhir/StructureDefinition/Element",
+                    "xpath": "@value|f:*|h:div",
+                  },
+                ],
+                "definition": "Vital Sign Value recorded with UCUM.",
+                "id": "Observation.component.valueCodeableConcept",
+                "isModifier": false,
+                "isSummary": true,
+                "mapping": Array [
+                  Object {
+                    "identity": "sct-concept",
+                    "map": "363714003 |Interprets| < 441742003 |Evaluation finding|",
+                  },
+                  Object {
+                    "identity": "v2",
+                    "map": "OBX.2, OBX.5, OBX.6",
+                  },
+                  Object {
+                    "identity": "rim",
+                    "map": "value",
+                  },
+                  Object {
+                    "identity": "sct-attr",
+                    "map": "363714003 |Interprets|",
+                  },
+                ],
+                "max": "1",
+                "min": 0,
+                "mustSupport": true,
+                "path": "Observation.component.valueCodeableConcept",
+                "requirements": "9. SHALL contain exactly one [1..1] value with @xsi:type=\\"PQ\\" (CONF:7305).",
+                "short": "Vital Sign Value recorded with UCUM",
+                "type": Array [
+                  Object {
+                    "code": "CodeableConcept",
+                  },
+                ],
+              },
+              "id": "valueCodeableConcept",
+              "isItem": false,
+              "isPrimitive": false,
+              "isSlice": false,
+              "items": Array [],
+              "name": "valueCodeableConcept",
+              "parent": undefined,
+              "slices": Array [],
+              "types": Array [
+                "CodeableConcept",
+              ],
+            },
+            Object {
+              "children": Array [],
+              "choices": Array [],
+              "definition": Object {
+                "base": Object {
+                  "max": "1",
+                  "min": 0,
+                  "path": "Observation.component.value[x]",
+                },
+                "binding": Object {
+                  "description": "Common UCUM units for recording Vital Signs.",
+                  "extension": Array [
+                    Object {
+                      "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+                      "valueString": "VitalSignsUnits",
+                    },
+                  ],
+                  "strength": "required",
+                  "valueSet": "http://hl7.org/fhir/ValueSet/ucum-vitals-common|4.0.1",
+                },
+                "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](http://hl7.org/fhir/observation.html#notes) below.",
+                "condition": Array [
+                  "vs-3",
+                ],
+                "constraint": Array [
+                  Object {
+                    "expression": "hasValue() or (children().count() > id.count())",
+                    "human": "All FHIR elements must have a @value or children",
+                    "key": "ele-1",
+                    "severity": "error",
+                    "source": "http://hl7.org/fhir/StructureDefinition/Element",
+                    "xpath": "@value|f:*|h:div",
+                  },
+                ],
+                "definition": "Vital Sign Value recorded with UCUM.",
+                "id": "Observation.component.valueString",
+                "isModifier": false,
+                "isSummary": true,
+                "mapping": Array [
+                  Object {
+                    "identity": "sct-concept",
+                    "map": "363714003 |Interprets| < 441742003 |Evaluation finding|",
+                  },
+                  Object {
+                    "identity": "v2",
+                    "map": "OBX.2, OBX.5, OBX.6",
+                  },
+                  Object {
+                    "identity": "rim",
+                    "map": "value",
+                  },
+                  Object {
+                    "identity": "sct-attr",
+                    "map": "363714003 |Interprets|",
+                  },
+                ],
+                "max": "1",
+                "min": 0,
+                "mustSupport": true,
+                "path": "Observation.component.valueString",
+                "requirements": "9. SHALL contain exactly one [1..1] value with @xsi:type=\\"PQ\\" (CONF:7305).",
+                "short": "Vital Sign Value recorded with UCUM",
+                "type": Array [
+                  Object {
+                    "code": "string",
+                  },
+                ],
+              },
+              "id": "valueString",
+              "isItem": false,
+              "isPrimitive": true,
+              "isSlice": false,
+              "items": Array [],
+              "name": "valueString",
+              "parent": undefined,
+              "slices": Array [],
+              "types": Array [
+                "string",
+              ],
+            },
+            Object {
+              "children": Array [],
+              "choices": Array [],
+              "definition": Object {
+                "base": Object {
+                  "max": "1",
+                  "min": 0,
+                  "path": "Observation.component.value[x]",
+                },
+                "binding": Object {
+                  "description": "Common UCUM units for recording Vital Signs.",
+                  "extension": Array [
+                    Object {
+                      "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+                      "valueString": "VitalSignsUnits",
+                    },
+                  ],
+                  "strength": "required",
+                  "valueSet": "http://hl7.org/fhir/ValueSet/ucum-vitals-common|4.0.1",
+                },
+                "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](http://hl7.org/fhir/observation.html#notes) below.",
+                "condition": Array [
+                  "vs-3",
+                ],
+                "constraint": Array [
+                  Object {
+                    "expression": "hasValue() or (children().count() > id.count())",
+                    "human": "All FHIR elements must have a @value or children",
+                    "key": "ele-1",
+                    "severity": "error",
+                    "source": "http://hl7.org/fhir/StructureDefinition/Element",
+                    "xpath": "@value|f:*|h:div",
+                  },
+                ],
+                "definition": "Vital Sign Value recorded with UCUM.",
+                "id": "Observation.component.valueBoolean",
+                "isModifier": false,
+                "isSummary": true,
+                "mapping": Array [
+                  Object {
+                    "identity": "sct-concept",
+                    "map": "363714003 |Interprets| < 441742003 |Evaluation finding|",
+                  },
+                  Object {
+                    "identity": "v2",
+                    "map": "OBX.2, OBX.5, OBX.6",
+                  },
+                  Object {
+                    "identity": "rim",
+                    "map": "value",
+                  },
+                  Object {
+                    "identity": "sct-attr",
+                    "map": "363714003 |Interprets|",
+                  },
+                ],
+                "max": "1",
+                "min": 0,
+                "mustSupport": true,
+                "path": "Observation.component.valueBoolean",
+                "requirements": "9. SHALL contain exactly one [1..1] value with @xsi:type=\\"PQ\\" (CONF:7305).",
+                "short": "Vital Sign Value recorded with UCUM",
+                "type": Array [
+                  Object {
+                    "code": "boolean",
+                  },
+                ],
+              },
+              "id": "valueBoolean",
+              "isItem": false,
+              "isPrimitive": true,
+              "isSlice": false,
+              "items": Array [],
+              "name": "valueBoolean",
+              "parent": undefined,
+              "slices": Array [],
+              "types": Array [
+                "boolean",
+              ],
+            },
+            Object {
+              "children": Array [],
+              "choices": Array [],
+              "definition": Object {
+                "base": Object {
+                  "max": "1",
+                  "min": 0,
+                  "path": "Observation.component.value[x]",
+                },
+                "binding": Object {
+                  "description": "Common UCUM units for recording Vital Signs.",
+                  "extension": Array [
+                    Object {
+                      "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+                      "valueString": "VitalSignsUnits",
+                    },
+                  ],
+                  "strength": "required",
+                  "valueSet": "http://hl7.org/fhir/ValueSet/ucum-vitals-common|4.0.1",
+                },
+                "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](http://hl7.org/fhir/observation.html#notes) below.",
+                "condition": Array [
+                  "vs-3",
+                ],
+                "constraint": Array [
+                  Object {
+                    "expression": "hasValue() or (children().count() > id.count())",
+                    "human": "All FHIR elements must have a @value or children",
+                    "key": "ele-1",
+                    "severity": "error",
+                    "source": "http://hl7.org/fhir/StructureDefinition/Element",
+                    "xpath": "@value|f:*|h:div",
+                  },
+                ],
+                "definition": "Vital Sign Value recorded with UCUM.",
+                "id": "Observation.component.valueInteger",
+                "isModifier": false,
+                "isSummary": true,
+                "mapping": Array [
+                  Object {
+                    "identity": "sct-concept",
+                    "map": "363714003 |Interprets| < 441742003 |Evaluation finding|",
+                  },
+                  Object {
+                    "identity": "v2",
+                    "map": "OBX.2, OBX.5, OBX.6",
+                  },
+                  Object {
+                    "identity": "rim",
+                    "map": "value",
+                  },
+                  Object {
+                    "identity": "sct-attr",
+                    "map": "363714003 |Interprets|",
+                  },
+                ],
+                "max": "1",
+                "min": 0,
+                "mustSupport": true,
+                "path": "Observation.component.valueInteger",
+                "requirements": "9. SHALL contain exactly one [1..1] value with @xsi:type=\\"PQ\\" (CONF:7305).",
+                "short": "Vital Sign Value recorded with UCUM",
+                "type": Array [
+                  Object {
+                    "code": "integer",
+                  },
+                ],
+              },
+              "id": "valueInteger",
+              "isItem": false,
+              "isPrimitive": true,
+              "isSlice": false,
+              "items": Array [],
+              "name": "valueInteger",
+              "parent": undefined,
+              "slices": Array [],
+              "types": Array [
+                "integer",
+              ],
+            },
+            Object {
+              "children": Array [],
+              "choices": Array [],
+              "definition": Object {
+                "base": Object {
+                  "max": "1",
+                  "min": 0,
+                  "path": "Observation.component.value[x]",
+                },
+                "binding": Object {
+                  "description": "Common UCUM units for recording Vital Signs.",
+                  "extension": Array [
+                    Object {
+                      "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+                      "valueString": "VitalSignsUnits",
+                    },
+                  ],
+                  "strength": "required",
+                  "valueSet": "http://hl7.org/fhir/ValueSet/ucum-vitals-common|4.0.1",
+                },
+                "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](http://hl7.org/fhir/observation.html#notes) below.",
+                "condition": Array [
+                  "vs-3",
+                ],
+                "constraint": Array [
+                  Object {
+                    "expression": "hasValue() or (children().count() > id.count())",
+                    "human": "All FHIR elements must have a @value or children",
+                    "key": "ele-1",
+                    "severity": "error",
+                    "source": "http://hl7.org/fhir/StructureDefinition/Element",
+                    "xpath": "@value|f:*|h:div",
+                  },
+                ],
+                "definition": "Vital Sign Value recorded with UCUM.",
+                "id": "Observation.component.valueRange",
+                "isModifier": false,
+                "isSummary": true,
+                "mapping": Array [
+                  Object {
+                    "identity": "sct-concept",
+                    "map": "363714003 |Interprets| < 441742003 |Evaluation finding|",
+                  },
+                  Object {
+                    "identity": "v2",
+                    "map": "OBX.2, OBX.5, OBX.6",
+                  },
+                  Object {
+                    "identity": "rim",
+                    "map": "value",
+                  },
+                  Object {
+                    "identity": "sct-attr",
+                    "map": "363714003 |Interprets|",
+                  },
+                ],
+                "max": "1",
+                "min": 0,
+                "mustSupport": true,
+                "path": "Observation.component.valueRange",
+                "requirements": "9. SHALL contain exactly one [1..1] value with @xsi:type=\\"PQ\\" (CONF:7305).",
+                "short": "Vital Sign Value recorded with UCUM",
+                "type": Array [
+                  Object {
+                    "code": "Range",
+                  },
+                ],
+              },
+              "id": "valueRange",
+              "isItem": false,
+              "isPrimitive": false,
+              "isSlice": false,
+              "items": Array [],
+              "name": "valueRange",
+              "parent": undefined,
+              "slices": Array [],
+              "types": Array [
+                "Range",
+              ],
+            },
+            Object {
+              "children": Array [],
+              "choices": Array [],
+              "definition": Object {
+                "base": Object {
+                  "max": "1",
+                  "min": 0,
+                  "path": "Observation.component.value[x]",
+                },
+                "binding": Object {
+                  "description": "Common UCUM units for recording Vital Signs.",
+                  "extension": Array [
+                    Object {
+                      "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+                      "valueString": "VitalSignsUnits",
+                    },
+                  ],
+                  "strength": "required",
+                  "valueSet": "http://hl7.org/fhir/ValueSet/ucum-vitals-common|4.0.1",
+                },
+                "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](http://hl7.org/fhir/observation.html#notes) below.",
+                "condition": Array [
+                  "vs-3",
+                ],
+                "constraint": Array [
+                  Object {
+                    "expression": "hasValue() or (children().count() > id.count())",
+                    "human": "All FHIR elements must have a @value or children",
+                    "key": "ele-1",
+                    "severity": "error",
+                    "source": "http://hl7.org/fhir/StructureDefinition/Element",
+                    "xpath": "@value|f:*|h:div",
+                  },
+                ],
+                "definition": "Vital Sign Value recorded with UCUM.",
+                "id": "Observation.component.valueRatio",
+                "isModifier": false,
+                "isSummary": true,
+                "mapping": Array [
+                  Object {
+                    "identity": "sct-concept",
+                    "map": "363714003 |Interprets| < 441742003 |Evaluation finding|",
+                  },
+                  Object {
+                    "identity": "v2",
+                    "map": "OBX.2, OBX.5, OBX.6",
+                  },
+                  Object {
+                    "identity": "rim",
+                    "map": "value",
+                  },
+                  Object {
+                    "identity": "sct-attr",
+                    "map": "363714003 |Interprets|",
+                  },
+                ],
+                "max": "1",
+                "min": 0,
+                "mustSupport": true,
+                "path": "Observation.component.valueRatio",
+                "requirements": "9. SHALL contain exactly one [1..1] value with @xsi:type=\\"PQ\\" (CONF:7305).",
+                "short": "Vital Sign Value recorded with UCUM",
+                "type": Array [
+                  Object {
+                    "code": "Ratio",
+                  },
+                ],
+              },
+              "id": "valueRatio",
+              "isItem": false,
+              "isPrimitive": false,
+              "isSlice": false,
+              "items": Array [],
+              "name": "valueRatio",
+              "parent": undefined,
+              "slices": Array [],
+              "types": Array [
+                "Ratio",
+              ],
+            },
+            Object {
+              "children": Array [],
+              "choices": Array [],
+              "definition": Object {
+                "base": Object {
+                  "max": "1",
+                  "min": 0,
+                  "path": "Observation.component.value[x]",
+                },
+                "binding": Object {
+                  "description": "Common UCUM units for recording Vital Signs.",
+                  "extension": Array [
+                    Object {
+                      "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+                      "valueString": "VitalSignsUnits",
+                    },
+                  ],
+                  "strength": "required",
+                  "valueSet": "http://hl7.org/fhir/ValueSet/ucum-vitals-common|4.0.1",
+                },
+                "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](http://hl7.org/fhir/observation.html#notes) below.",
+                "condition": Array [
+                  "vs-3",
+                ],
+                "constraint": Array [
+                  Object {
+                    "expression": "hasValue() or (children().count() > id.count())",
+                    "human": "All FHIR elements must have a @value or children",
+                    "key": "ele-1",
+                    "severity": "error",
+                    "source": "http://hl7.org/fhir/StructureDefinition/Element",
+                    "xpath": "@value|f:*|h:div",
+                  },
+                ],
+                "definition": "Vital Sign Value recorded with UCUM.",
+                "id": "Observation.component.valueSampledData",
+                "isModifier": false,
+                "isSummary": true,
+                "mapping": Array [
+                  Object {
+                    "identity": "sct-concept",
+                    "map": "363714003 |Interprets| < 441742003 |Evaluation finding|",
+                  },
+                  Object {
+                    "identity": "v2",
+                    "map": "OBX.2, OBX.5, OBX.6",
+                  },
+                  Object {
+                    "identity": "rim",
+                    "map": "value",
+                  },
+                  Object {
+                    "identity": "sct-attr",
+                    "map": "363714003 |Interprets|",
+                  },
+                ],
+                "max": "1",
+                "min": 0,
+                "mustSupport": true,
+                "path": "Observation.component.valueSampledData",
+                "requirements": "9. SHALL contain exactly one [1..1] value with @xsi:type=\\"PQ\\" (CONF:7305).",
+                "short": "Vital Sign Value recorded with UCUM",
+                "type": Array [
+                  Object {
+                    "code": "SampledData",
+                  },
+                ],
+              },
+              "id": "valueSampledData",
+              "isItem": false,
+              "isPrimitive": false,
+              "isSlice": false,
+              "items": Array [],
+              "name": "valueSampledData",
+              "parent": undefined,
+              "slices": Array [],
+              "types": Array [
+                "SampledData",
+              ],
+            },
+            Object {
+              "children": Array [],
+              "choices": Array [],
+              "definition": Object {
+                "base": Object {
+                  "max": "1",
+                  "min": 0,
+                  "path": "Observation.component.value[x]",
+                },
+                "binding": Object {
+                  "description": "Common UCUM units for recording Vital Signs.",
+                  "extension": Array [
+                    Object {
+                      "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+                      "valueString": "VitalSignsUnits",
+                    },
+                  ],
+                  "strength": "required",
+                  "valueSet": "http://hl7.org/fhir/ValueSet/ucum-vitals-common|4.0.1",
+                },
+                "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](http://hl7.org/fhir/observation.html#notes) below.",
+                "condition": Array [
+                  "vs-3",
+                ],
+                "constraint": Array [
+                  Object {
+                    "expression": "hasValue() or (children().count() > id.count())",
+                    "human": "All FHIR elements must have a @value or children",
+                    "key": "ele-1",
+                    "severity": "error",
+                    "source": "http://hl7.org/fhir/StructureDefinition/Element",
+                    "xpath": "@value|f:*|h:div",
+                  },
+                ],
+                "definition": "Vital Sign Value recorded with UCUM.",
+                "id": "Observation.component.valueTime",
+                "isModifier": false,
+                "isSummary": true,
+                "mapping": Array [
+                  Object {
+                    "identity": "sct-concept",
+                    "map": "363714003 |Interprets| < 441742003 |Evaluation finding|",
+                  },
+                  Object {
+                    "identity": "v2",
+                    "map": "OBX.2, OBX.5, OBX.6",
+                  },
+                  Object {
+                    "identity": "rim",
+                    "map": "value",
+                  },
+                  Object {
+                    "identity": "sct-attr",
+                    "map": "363714003 |Interprets|",
+                  },
+                ],
+                "max": "1",
+                "min": 0,
+                "mustSupport": true,
+                "path": "Observation.component.valueTime",
+                "requirements": "9. SHALL contain exactly one [1..1] value with @xsi:type=\\"PQ\\" (CONF:7305).",
+                "short": "Vital Sign Value recorded with UCUM",
+                "type": Array [
+                  Object {
+                    "code": "time",
+                  },
+                ],
+              },
+              "id": "valueTime",
+              "isItem": false,
+              "isPrimitive": true,
+              "isSlice": false,
+              "items": Array [],
+              "name": "valueTime",
+              "parent": undefined,
+              "slices": Array [],
+              "types": Array [
+                "time",
+              ],
+            },
+            Object {
+              "children": Array [],
+              "choices": Array [],
+              "definition": Object {
+                "base": Object {
+                  "max": "1",
+                  "min": 0,
+                  "path": "Observation.component.value[x]",
+                },
+                "binding": Object {
+                  "description": "Common UCUM units for recording Vital Signs.",
+                  "extension": Array [
+                    Object {
+                      "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+                      "valueString": "VitalSignsUnits",
+                    },
+                  ],
+                  "strength": "required",
+                  "valueSet": "http://hl7.org/fhir/ValueSet/ucum-vitals-common|4.0.1",
+                },
+                "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](http://hl7.org/fhir/observation.html#notes) below.",
+                "condition": Array [
+                  "vs-3",
+                ],
+                "constraint": Array [
+                  Object {
+                    "expression": "hasValue() or (children().count() > id.count())",
+                    "human": "All FHIR elements must have a @value or children",
+                    "key": "ele-1",
+                    "severity": "error",
+                    "source": "http://hl7.org/fhir/StructureDefinition/Element",
+                    "xpath": "@value|f:*|h:div",
+                  },
+                ],
+                "definition": "Vital Sign Value recorded with UCUM.",
+                "id": "Observation.component.valueDateTime",
+                "isModifier": false,
+                "isSummary": true,
+                "mapping": Array [
+                  Object {
+                    "identity": "sct-concept",
+                    "map": "363714003 |Interprets| < 441742003 |Evaluation finding|",
+                  },
+                  Object {
+                    "identity": "v2",
+                    "map": "OBX.2, OBX.5, OBX.6",
+                  },
+                  Object {
+                    "identity": "rim",
+                    "map": "value",
+                  },
+                  Object {
+                    "identity": "sct-attr",
+                    "map": "363714003 |Interprets|",
+                  },
+                ],
+                "max": "1",
+                "min": 0,
+                "mustSupport": true,
+                "path": "Observation.component.valueDateTime",
+                "requirements": "9. SHALL contain exactly one [1..1] value with @xsi:type=\\"PQ\\" (CONF:7305).",
+                "short": "Vital Sign Value recorded with UCUM",
+                "type": Array [
+                  Object {
+                    "code": "dateTime",
+                  },
+                ],
+              },
+              "id": "valueDateTime",
+              "isItem": false,
+              "isPrimitive": true,
+              "isSlice": false,
+              "items": Array [],
+              "name": "valueDateTime",
+              "parent": undefined,
+              "slices": Array [],
+              "types": Array [
+                "dateTime",
+              ],
+            },
+            Object {
+              "children": Array [],
+              "choices": Array [],
+              "definition": Object {
+                "base": Object {
+                  "max": "1",
+                  "min": 0,
+                  "path": "Observation.component.value[x]",
+                },
+                "binding": Object {
+                  "description": "Common UCUM units for recording Vital Signs.",
+                  "extension": Array [
+                    Object {
+                      "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+                      "valueString": "VitalSignsUnits",
+                    },
+                  ],
+                  "strength": "required",
+                  "valueSet": "http://hl7.org/fhir/ValueSet/ucum-vitals-common|4.0.1",
+                },
+                "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](http://hl7.org/fhir/observation.html#notes) below.",
+                "condition": Array [
+                  "vs-3",
+                ],
+                "constraint": Array [
+                  Object {
+                    "expression": "hasValue() or (children().count() > id.count())",
+                    "human": "All FHIR elements must have a @value or children",
+                    "key": "ele-1",
+                    "severity": "error",
+                    "source": "http://hl7.org/fhir/StructureDefinition/Element",
+                    "xpath": "@value|f:*|h:div",
+                  },
+                ],
+                "definition": "Vital Sign Value recorded with UCUM.",
+                "id": "Observation.component.valuePeriod",
+                "isModifier": false,
+                "isSummary": true,
+                "mapping": Array [
+                  Object {
+                    "identity": "sct-concept",
+                    "map": "363714003 |Interprets| < 441742003 |Evaluation finding|",
+                  },
+                  Object {
+                    "identity": "v2",
+                    "map": "OBX.2, OBX.5, OBX.6",
+                  },
+                  Object {
+                    "identity": "rim",
+                    "map": "value",
+                  },
+                  Object {
+                    "identity": "sct-attr",
+                    "map": "363714003 |Interprets|",
+                  },
+                ],
+                "max": "1",
+                "min": 0,
+                "mustSupport": true,
+                "path": "Observation.component.valuePeriod",
+                "requirements": "9. SHALL contain exactly one [1..1] value with @xsi:type=\\"PQ\\" (CONF:7305).",
+                "short": "Vital Sign Value recorded with UCUM",
+                "type": Array [
+                  Object {
+                    "code": "Period",
+                  },
+                ],
+              },
+              "id": "valuePeriod",
+              "isItem": false,
+              "isPrimitive": false,
+              "isSlice": false,
+              "items": Array [],
+              "name": "valuePeriod",
+              "parent": undefined,
+              "slices": Array [],
+              "types": Array [
+                "Period",
+              ],
+            },
+          ],
           "definition": Object {
             "base": Object {
               "max": "1",
@@ -4406,6 +5514,7 @@ OR
         },
         Object {
           "children": Array [],
+          "choices": Array [],
           "definition": Object {
             "base": Object {
               "max": "1",
@@ -4480,6 +5589,7 @@ The alternate way is to use the value element for actual observations and use th
         },
         Object {
           "children": Array [],
+          "choices": Array [],
           "definition": Object {
             "alias": Array [
               "Abnormal Flag",
@@ -4558,6 +5668,7 @@ The alternate way is to use the value element for actual observations and use th
         },
         Object {
           "children": Array [],
+          "choices": Array [],
           "definition": Object {
             "base": Object {
               "max": "*",
@@ -4607,6 +5718,7 @@ The alternate way is to use the value element for actual observations and use th
           "types": Array [],
         },
       ],
+      "choices": Array [],
       "definition": Object {
         "base": Object {
           "max": "*",
@@ -4767,6 +5879,7 @@ Object {
   "attributes": Array [
     Object {
       "children": Array [],
+      "choices": Array [],
       "definition": Object {
         "base": Object {
           "max": "1",
@@ -4795,6 +5908,7 @@ Object {
           "children": Array [
             Object {
               "children": Array [],
+              "choices": Array [],
               "definition": Object {
                 "base": Object {
                   "max": "1",
@@ -4824,6 +5938,7 @@ Object {
               ],
             },
           ],
+          "choices": Array [],
           "definition": Object {
             "base": Object {
               "max": "1",
