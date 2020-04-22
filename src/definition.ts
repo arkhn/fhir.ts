@@ -127,6 +127,11 @@ export const structurize = (fhirDefinition: {
           // keep iterating on the snapshot elements using the type attribute as previous
           return recBuildAttributes(rest, res, type)
         }
+        if (previous.path.endsWith('[x]') && previous.choices.length === 0) {
+          // If previous has several types but choices are not constrained, we spread them
+          // to fill choices
+          previous.spreadTypes()
+        }
 
         if (isSliceOf(current, previous.definition)) {
           const slice = new Attribute(current)

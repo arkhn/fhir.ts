@@ -159,20 +159,16 @@ export class Attribute {
   // spreadTypes generates an array of single-type Attribute for each type of this attribute.
   // We use this in cases where we have an attrirbute like "value[x]" which has multiple types
   // and we want to generate as many children as there are types (eg: "valueQuantity", "valueBoolean"...)
-  spreadTypes(): Attribute[] {
-    if (this.types.length > 1) {
-      return this.types.map(type => {
-        const attr = new Attribute({
-          ...this.definition,
-          type: [{ code: type }],
-          id: this.definition.id.replace('[x]', toCamelCase(type)),
-          path: this.definition.path.replace('[x]', toCamelCase(type)),
-        })
-        this.parent?.addChild(attr)
-        return attr
+  spreadTypes() {
+    this.types.forEach(type => {
+      const attr = new Attribute({
+        ...this.definition,
+        type: [{ code: type }],
+        id: this.definition.id.replace('[x]', toCamelCase(type)),
+        path: this.definition.path.replace('[x]', toCamelCase(type)),
       })
-    }
-    return [this]
+      this.addChoice(attr)
+    })
   }
 
   // addChild adds a child attribute to this and sets the child's parent to this.
