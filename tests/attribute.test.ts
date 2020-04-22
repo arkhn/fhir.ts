@@ -102,6 +102,7 @@ describe('Attribute', () => {
     expect(attribute).toMatchInlineSnapshot(`
       Object {
         "children": Array [],
+        "choices": Array [],
         "definition": Object {
           "base": Object {
             "path": "Observation.code",
@@ -192,15 +193,6 @@ describe('Attribute', () => {
       const slice = new Attribute(observationValueSliceDefinition)
       expect(slice.tail).toEqual('valueQuantity')
     })
-
-    it('handles slice array item', () => {
-      const array = new Attribute(observationIdentifierDefinition)
-      const slice = new Attribute(observationCategorySliceDefinition)
-
-      const item = array.addItem()
-      item.addSlice(slice)
-      expect(slice.tail).toEqual('category[0]')
-    })
   })
 
   describe('path', () => {
@@ -245,9 +237,9 @@ describe('Attribute', () => {
         ],
       }
       const multiTypeAttr = new Attribute(multitypeAttributeDefinition)
-      const generated = multiTypeAttr.spreadTypes()
-      expect(generated).toHaveLength(4)
-      expect(generated.map(({ path }) => path)).toEqual([
+      multiTypeAttr.spreadTypes()
+      expect(multiTypeAttr.choices).toHaveLength(4)
+      expect(multiTypeAttr.choices.map(({ path }) => path)).toEqual([
         'valueQuantity',
         'valueCodeableConcept',
         'valueString',
@@ -266,6 +258,21 @@ describe('Attribute', () => {
     })
   })
 
+  describe('addChoice', () => {
+    it('adds a choice and update the parent', () => {
+      const parent = new Attribute(observationCodeDefinition)
+      const attr = new Attribute(observationIdDefinition)
+      const choice = new Attribute(observationValueSliceDefinition)
+      parent.addChild(attr)
+      attr.addChoice(choice)
+
+      expect(choice.parent).toEqual(parent)
+      expect(attr.choices).toEqual([choice])
+      expect(choice.isItem).toBe(false)
+      expect(choice.index).not.toBeDefined()
+    })
+  })
+
   describe('addSlice', () => {
     it('adds a slice and update the parent', () => {
       const parent = new Attribute(observationCodeDefinition)
@@ -274,22 +281,10 @@ describe('Attribute', () => {
       parent.addChild(attr)
       attr.addSlice(slice)
 
-      expect(slice.parent).toEqual(parent)
+      expect(slice.parent).toEqual(attr)
       expect(attr.slices).toEqual([slice])
       expect(slice.isItem).toBe(false)
       expect(slice.index).not.toBeDefined()
-    })
-
-    it('handles slice items', () => {
-      const array = new Attribute(observationIdentifierDefinition)
-      const slice = new Attribute(observationValueSliceDefinition)
-      const item = array.addItem()
-      item.addSlice(slice)
-
-      expect(slice.parent).not.toBeDefined()
-      expect(item.slices).toEqual([slice])
-      expect(slice.isItem).toBe(true)
-      expect(slice.index).toEqual(item.index)
     })
   })
 
@@ -308,21 +303,6 @@ describe('Attribute', () => {
       expect(array.items).toEqual([item])
       expect(item.isItem).toBe(true)
       expect(item.index).toEqual(0)
-    })
-
-    it('forwards the index to the slices if any', () => {
-      const array = new Attribute(observationIdentifierDefinition)
-      const slice1 = new Attribute(observationValueSliceDefinition)
-      const slice2 = new Attribute(observationValueSliceDefinition)
-      const item = array.addItem()
-
-      item.addSlice(slice1)
-      item.addSlice(slice2)
-
-      expect(slice1.isItem).toBe(true)
-      expect(slice1.index).toEqual(item.index)
-      expect(slice2.isItem).toBe(true)
-      expect(slice2.index).toEqual(item.index)
     })
 
     it('accepts an optional index', () => {
