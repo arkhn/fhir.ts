@@ -37,9 +37,8 @@ export const isChoiceOf = (
 export const isSliceOf = (
   slice: AttributeDefinition,
   attr: AttributeDefinition,
-): boolean => {
-  return slice.path === attr.path && !!slice.sliceName && !attr.sliceName
-}
+): boolean => slice.path === attr.path && !!slice.sliceName && !attr.sliceName
+
 export const isChildOf = (
   child: AttributeDefinition,
   parent: AttributeDefinition,
