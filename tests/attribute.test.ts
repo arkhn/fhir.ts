@@ -174,6 +174,16 @@ describe('Attribute', () => {
       const copied = Attribute.from(parent)
       expect(JSON.stringify(copied) === JSON.stringify(parent))
     })
+
+    it('specify the parent', () => {
+      const parent = new Attribute(observationCodeDefinition)
+      const child = new Attribute(observationIdDefinition)
+
+      const attr = Attribute.from(child, parent)
+
+      expect(attr.parent).toEqual(parent)
+      expect(parent.children).toEqual([attr])
+    })
   })
 
   describe('tail', () => {
