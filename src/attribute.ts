@@ -141,8 +141,9 @@ export class Attribute {
   // It recursively browse all the slices, choices, children and items in order to deep copy the provided attribute.
   // This function is especially useful when we want to rebuild an
   // Attribute tree from a cached version of a StructureDefinition.
-  static from(serialized: any): Attribute {
+  static from(serialized: any, parent?: Attribute): Attribute {
     const attr = new Attribute(serialized.definition)
+    parent?.addChild(attr)
     serialized.children.forEach((child: Attribute) =>
       attr.addChild(Attribute.from(child)),
     )
