@@ -1,6 +1,7 @@
 import * as heartrateProfile from './fixtures/heartrate-profile.json'
 import * as mockDefinition from './fixtures/mockDefinition.json'
 import * as definitionWithSlices from './fixtures/definitionWithSlices.json'
+import * as patientAnimal from './fixtures/patient-animal.json'
 
 import { structurize, isChildOf } from 'definition'
 import { AttributeDefinition } from 'types'
@@ -129,5 +130,14 @@ describe('structurize', () => {
     expect(structured.attributes![0].children).toHaveLength(0)
     expect(structured.attributes![0].slices).toHaveLength(1)
     expect(structured.attributes![0].slices[0].children).toHaveLength(1)
+  })
+
+  it('spread types when no choices are specified', () => {
+    const structured = structurize(patientAnimal.resource)
+
+    expect(structured.attributes).toHaveLength(3)
+    expect(structured.attributes![0].slices).toHaveLength(3)
+    expect(structured.attributes![2].children).toHaveLength(0)
+    expect(structured.attributes![2].choices).toHaveLength(50)
   })
 })

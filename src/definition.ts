@@ -109,6 +109,17 @@ export const structurize = (fhirDefinition: {
     ): Attribute[] => {
       const [current, ...rest] = attributes
 
+      // If previous has several types but choices are not constrained, we spread them
+      // to fill choices.
+      // In case we reached the end of the attributes, make sure we spread the types if needed.
+      if (
+        previous &&
+        !(current && isChoiceOf(current, previous.definition)) &&
+        previous.path.endsWith('[x]') &&
+        previous.choices.length === 0
+      )
+        previous.spreadTypes()
+
       // if the list of snapshot elements is over, return the attribute list
       if (!current) {
         return res
@@ -126,11 +137,6 @@ export const structurize = (fhirDefinition: {
           previous.addChoice(type)
           // keep iterating on the snapshot elements using the type attribute as previous
           return recBuildAttributes(rest, res, type)
-        }
-        if (previous.path.endsWith('[x]') && previous.choices.length === 0) {
-          // If previous has several types but choices are not constrained, we spread them
-          // to fill choices
-          previous.spreadTypes()
         }
 
         if (isSliceOf(current, previous.definition)) {
