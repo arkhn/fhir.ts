@@ -17,6 +17,22 @@ const observationIdentifierDefinition: AttributeDefinition = {
   ],
 }
 
+const observationIdentifierProfileDefinition: AttributeDefinition = {
+  id: 'Observation.identifier',
+  path: 'Observation.identifier',
+  definition: 'identifier',
+  min: 0,
+  max: '*',
+  base: {
+    path: 'Observation.identifier',
+  },
+  type: [
+    {
+      code: 'string',
+      profile: ['http://hl7.org/fhir/StructureDefinition/custom-identifier'],
+    },
+  ],
+}
 const observationCodeDefinition: AttributeDefinition = {
   id: 'Observation.code',
   path: 'Observation.code',
@@ -131,6 +147,16 @@ describe('Attribute', () => {
         ],
       }
     `)
+  })
+
+  it('computes the type correctly when dealing whith primitive types', () => {
+    const attribute = new Attribute(observationIdDefinition)
+    expect(attribute.types).toEqual(['string'])
+  })
+
+  it('computes the type correctly when dealing whith primitive types', () => {
+    const attribute = new Attribute(observationIdentifierProfileDefinition)
+    expect(attribute.types).toEqual(['custom-identifier'])
   })
 
   describe('toJSON', () => {

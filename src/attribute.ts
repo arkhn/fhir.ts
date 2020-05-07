@@ -38,16 +38,21 @@ interface TypeElement {
 // computeType transforms a FHIR 'Element' into a single definitionId
 // that can be fetched from the FHIR API.
 // It may be a either:
+// - a primitive type indicated by the "structuredefinition-fhir-type" extension
 // - a basic resource/complex-type/primitive-type (element.code)
 // - a profile (element.profile[0])
-// - an extension (element.extension[0].url)
 const computeType = (element: TypeElement): string => {
-  if (element.extension && element.extension.length > 0) {
-    return (
-      element.extension[0].valueUrl ||
-      element.extension[0].url.split('/').pop()!
+  const primitive =
+    element.extension &&
+    element.extension.find(
+      ext =>
+        ext!.url ===
+        'http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type',
     )
-  }
+  // when dealing with primitive types (eg: fhirpath/System.String), we use the definition indicated
+  // by the extension of type "structuredefinition-fhir-type" (see "type" of Observation.id for example).
+  if (primitive) return primitive.valueUrl!
+
   if (element.profile && element.profile.length > 0) {
     return element.profile[0].split('/').pop()!
   }
