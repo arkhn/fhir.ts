@@ -154,7 +154,7 @@ describe('Attribute', () => {
     expect(attribute.types).toEqual(['string'])
   })
 
-  it('computes the type correctly when dealing whith primitive types', () => {
+  it('computes the type correctly when dealing whith profiles', () => {
     const attribute = new Attribute(observationIdentifierProfileDefinition)
     expect(attribute.types).toEqual(['custom-identifier'])
   })
