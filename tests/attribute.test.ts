@@ -112,6 +112,22 @@ const observationValueSliceDefinition = {
   ],
 }
 
+const observationExtensionDefinition: AttributeDefinition = {
+  id: 'Observation.extension',
+  path: 'Observation.extension',
+  definition: 'Extenson blabla',
+  min: 0,
+  max: '*',
+  base: {
+    path: 'DomainResource.extension',
+  },
+  type: [
+    {
+      code: 'Extension',
+    },
+  ],
+}
+
 describe('Attribute', () => {
   it('builds from an AttributeDefinition', () => {
     const attribute = new Attribute(observationCodeDefinition)
@@ -321,6 +337,17 @@ describe('Attribute', () => {
       expect(attr.slices).toEqual([slice])
       expect(slice.isItem).toBe(false)
       expect(slice.index).not.toBeDefined()
+    })
+  })
+
+  describe('addExtension', () => {
+    it('adds an extension with the extension id', () => {
+      const parent = new Attribute(observationCodeDefinition)
+      const child = new Attribute(observationExtensionDefinition)
+      parent.addChild(child)
+
+      const extensionNode = parent.addExtension('extension-custom-id')
+      expect(extensionNode.types).toEqual(['extension-custom-id'])
     })
   })
 

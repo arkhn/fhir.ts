@@ -252,7 +252,7 @@ export class Attribute {
 
     const ext = new Attribute({
       ...childExtension.definition,
-      type: [{ code: 'Extension', extension: [{ valueUrl: definitionId }] }],
+      type: [{ code: definitionId }],
     })
     return childExtension.addItem(index, ext)
   }
