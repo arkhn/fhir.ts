@@ -158,7 +158,6 @@ export class Attribute {
     serialized.slices.forEach((slice: Attribute) =>
       attr.addSlice(Attribute.from(slice)),
     )
-    serialized.items.forEach(() => attr.addItem())
     return attr
   }
 
