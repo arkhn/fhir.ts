@@ -210,11 +210,22 @@ describe('Attribute', () => {
       slice.addChild(sliceChild2)
 
       child3.addSlice(slice)
-      child3.addItem()
-      child3.addItem()
 
       const copied = Attribute.from(parent)
-      expect(JSON.stringify(copied) === JSON.stringify(parent))
+
+      expect(JSON.stringify(copied)).toEqual(JSON.stringify(parent))
+    })
+
+    it('do not copy items', () => {
+      const attr = new Attribute(observationIdentifierDefinition)
+
+      attr.addItem()
+      attr.addItem()
+
+      expect(attr.items.length).toEqual(2)
+
+      const copied = Attribute.from(attr)
+      expect(copied.items.length).toEqual(0)
     })
 
     it('specify the parent', () => {
